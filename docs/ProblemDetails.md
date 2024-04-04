@@ -1,4 +1,4 @@
-# OpenapiClient::ProblemDetails
+# SlipstreamClient::ProblemDetails
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::ProblemDetails.new(
+instance = SlipstreamClient::ProblemDetails.new(
   type: null,
   title: null,
   status: null,

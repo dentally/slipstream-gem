@@ -1,4 +1,4 @@
-# OpenapiClient::LetterChangeSummary
+# SlipstreamClient::LetterChangeSummary
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::LetterChangeSummary.new(
+instance = SlipstreamClient::LetterChangeSummary.new(
   timestamp: 2024-10-24T14:30:15+02:00,
   description: The letter was sent to the postal provider,
   status: null

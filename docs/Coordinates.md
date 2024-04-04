@@ -1,4 +1,4 @@
-# OpenapiClient::Coordinates
+# SlipstreamClient::Coordinates
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::Coordinates.new(
+instance = SlipstreamClient::Coordinates.new(
   latitude: 37.7749,
   longitude: -122.4194
 )

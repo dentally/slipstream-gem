@@ -1,4 +1,4 @@
-# OpenapiClient::OrganisationDetails
+# SlipstreamClient::OrganisationDetails
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::OrganisationDetails.new(
+instance = SlipstreamClient::OrganisationDetails.new(
   identity: null,
   website: https://dental-mega-corp.com/ouch-my-teeth,
   primary_email_address: admin@dental-mega-corp.com,

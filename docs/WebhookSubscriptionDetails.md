@@ -1,4 +1,4 @@
-# OpenapiClient::WebhookSubscriptionDetails
+# SlipstreamClient::WebhookSubscriptionDetails
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::WebhookSubscriptionDetails.new(
+instance = SlipstreamClient::WebhookSubscriptionDetails.new(
   uri: https://mywebhookreceiver.com/endpoint,
   headers: null,
   event_types: null,

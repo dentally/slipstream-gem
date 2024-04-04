@@ -1,4 +1,4 @@
-# OpenapiClient::DataUri
+# SlipstreamClient::DataUri
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::DataUri.new(
+instance = SlipstreamClient::DataUri.new(
   id: 12345678-1234-1234-1234-1234567890ab,
   data_uri: https://staticinternalfilessa.blob.core.windows.net/images/Slipstream_tree.pdf?sp&#x3D;r&amp;st&#x3D;2024-01-31T22:40:26Z&amp;se&#x3D;2026-01-02T06:40:26Z&amp;spr&#x3D;https&amp;sv&#x3D;2022-11-02&amp;sr&#x3D;b&amp;sig&#x3D;lbt2HQSdD%2BFG6x5hJK%2Brk2yZhMcZLqhiUm0tsu8xZ7E%3D,
   expiry: 2021-01-01T00:00Z,

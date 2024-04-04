@@ -1,4 +1,4 @@
-# OpenapiClient::Capability
+# SlipstreamClient::Capability
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::Capability.new()
+instance = SlipstreamClient::Capability.new()
 ```
 

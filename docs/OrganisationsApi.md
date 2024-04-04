@@ -1,4 +1,4 @@
-# OpenapiClient::OrganisationsApi
+# SlipstreamClient::OrganisationsApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -22,24 +22,24 @@ Deletes an organisation from the slipstream practice registry. Will fail if the 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::OrganisationsApi.new
+api_instance = SlipstreamClient::OrganisationsApi.new
 organisation_identifier = 'organisation_identifier_example' # String | The PMS-specific id that uniquely identifies an organisation (What you call the organisation in your software), which owns one or more practice sites
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Delete an organisation
   result = api_instance.delete_organisation(organisation_identifier, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->delete_organisation: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->delete_organisation_with_http_info: #{e}"
 end
 ```
@@ -95,24 +95,24 @@ Fetches the details of a given organisation in slipstream
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::OrganisationsApi.new
+api_instance = SlipstreamClient::OrganisationsApi.new
 organisation_identifier = 'organisation_identifier_example' # String | The PMS-specific id that uniquely identifies an organisation (What you call the organisation in your software), which owns one or more practice sites
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Get an organisation
   result = api_instance.get_organisation(organisation_identifier, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->get_organisation: #{e}"
 end
 ```
@@ -130,7 +130,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <OrganisationDetails>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->get_organisation_with_http_info: #{e}"
 end
 ```
@@ -168,24 +168,24 @@ Fetches the identity of a given organisation in slipstream
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::OrganisationsApi.new
+api_instance = SlipstreamClient::OrganisationsApi.new
 organisation_identifier = 'organisation_identifier_example' # String | The PMS-specific id that uniquely identifies an organisation (What you call the organisation in your software), which owns one or more practice sites
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Get organisation identity
   result = api_instance.get_organisation_identity(organisation_identifier, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->get_organisation_identity: #{e}"
 end
 ```
@@ -203,7 +203,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <OrganisationIdentity>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->get_organisation_identity_with_http_info: #{e}"
 end
 ```
@@ -241,25 +241,25 @@ Creates or updates an organisation in the slipstream practice registry and retur
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::OrganisationsApi.new
+api_instance = SlipstreamClient::OrganisationsApi.new
 organisation_identifier = 'organisation_identifier_example' # String | The PMS-specific id that uniquely identifies an organisation (What you call the organisation in your software), which owns one or more practice sites
-organisation_onboarding_request = OpenapiClient::OrganisationOnboardingRequest.new({name: 'Dental Mega Corp'}) # OrganisationOnboardingRequest | The details of the organisation to onboard
+organisation_onboarding_request = SlipstreamClient::OrganisationOnboardingRequest.new({name: 'Dental Mega Corp'}) # OrganisationOnboardingRequest | The details of the organisation to onboard
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Upsert organisation
   result = api_instance.onboard_organisation(organisation_identifier, organisation_onboarding_request, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->onboard_organisation: #{e}"
 end
 ```
@@ -277,7 +277,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <OrganisationIdentity>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling OrganisationsApi->onboard_organisation_with_http_info: #{e}"
 end
 ```

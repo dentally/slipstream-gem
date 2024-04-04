@@ -1,4 +1,4 @@
-# OpenapiClient::PhysicalPostWebhooksApi
+# SlipstreamClient::PhysicalPostWebhooksApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -21,9 +21,9 @@ Gets subscription information for physical post events
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -33,14 +33,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::PhysicalPostWebhooksApi.new
+api_instance = SlipstreamClient::PhysicalPostWebhooksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 
 begin
   # Get subscription information
   result = api_instance.get_physical_post_subscription(site_slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->get_physical_post_subscription: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebhookSubscriptionDetails>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->get_physical_post_subscription_with_http_info: #{e}"
 end
 ```
@@ -95,9 +95,9 @@ Subscribe to receiving webhooks for physical post events
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -107,15 +107,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::PhysicalPostWebhooksApi.new
+api_instance = SlipstreamClient::PhysicalPostWebhooksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-webhook_subscription = OpenapiClient::WebhookSubscription.new({uri: 'https://mywebhookreceiver.com/endpoint'}) # WebhookSubscription | 
+webhook_subscription = SlipstreamClient::WebhookSubscription.new({uri: 'https://mywebhookreceiver.com/endpoint'}) # WebhookSubscription | 
 
 begin
   # Subscribe
   result = api_instance.subscribe_to_physical_post(site_slug, webhook_subscription)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->subscribe_to_physical_post: #{e}"
 end
 ```
@@ -133,7 +133,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebhookSubscription>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->subscribe_to_physical_post_with_http_info: #{e}"
 end
 ```
@@ -171,9 +171,9 @@ Unsubscribe from receiving webhooks for physical post events
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -183,14 +183,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::PhysicalPostWebhooksApi.new
+api_instance = SlipstreamClient::PhysicalPostWebhooksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 
 begin
   # Unsubscribe
   result = api_instance.unsubscribe_to_physical_post(site_slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->unsubscribe_to_physical_post: #{e}"
 end
 ```
@@ -208,7 +208,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WebhookSubscription>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->unsubscribe_to_physical_post_with_http_info: #{e}"
 end
 ```

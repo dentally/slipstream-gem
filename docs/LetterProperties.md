@@ -1,4 +1,4 @@
-# OpenapiClient::LetterProperties
+# SlipstreamClient::LetterProperties
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::LetterProperties.new(
+instance = SlipstreamClient::LetterProperties.new(
   color: false,
   express: false
 )

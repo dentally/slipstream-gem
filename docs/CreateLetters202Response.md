@@ -1,4 +1,4 @@
-# OpenapiClient::CreateLetters202Response
+# SlipstreamClient::CreateLetters202Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::CreateLetters202Response.new(
+instance = SlipstreamClient::CreateLetters202Response.new(
   succeeded: null,
   failed: null
 )

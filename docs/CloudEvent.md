@@ -1,4 +1,4 @@
-# OpenapiClient::CloudEvent
+# SlipstreamClient::CloudEvent
 
 ## Properties
 
@@ -26,9 +26,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::CloudEvent.new(
+instance = SlipstreamClient::CloudEvent.new(
   specversion: null,
   id: null,
   source: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::NotFound
+# SlipstreamClient::NotFound
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::NotFound.new(
+instance = SlipstreamClient::NotFound.new(
   type: null,
   title: null,
   status: null,

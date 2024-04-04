@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteDetails
+# SlipstreamClient::PracticeSiteDetails
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteDetails.new(
+instance = SlipstreamClient::PracticeSiteDetails.new(
   practice_management_software: null,
   pms_specific_site_id: 04d2f2f0-8f1a-11eb-8dcd-0242ac130003,
   site_slug: s8n6EzC,

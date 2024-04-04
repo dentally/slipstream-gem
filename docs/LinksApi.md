@@ -1,4 +1,4 @@
-# OpenapiClient::LinksApi
+# SlipstreamClient::LinksApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -22,9 +22,9 @@ Creates shortened versions of one or more URLs
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -34,15 +34,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::LinksApi.new
+api_instance = SlipstreamClient::LinksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-shorten_link_request = [OpenapiClient::ShortenLinkRequest.new({full_link: 'https://www.google.com?q=sqids'})] # Array<ShortenLinkRequest> | The long links to shorten
+shorten_link_request = [SlipstreamClient::ShortenLinkRequest.new({full_link: 'https://www.google.com?q=sqids'})] # Array<ShortenLinkRequest> | The long links to shorten
 
 begin
   # Create short links
   result = api_instance.create_short_links(site_slug, shorten_link_request)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->create_short_links: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ShortLinksCreatedResponse>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->create_short_links_with_http_info: #{e}"
 end
 ```
@@ -98,9 +98,9 @@ Deletes a shortened link by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -110,14 +110,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::LinksApi.new
+api_instance = SlipstreamClient::LinksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 link_slug = 'link_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link
 
 begin
   # Delete Shortened Link
   api_instance.delete_short_link(site_slug, link_slug)
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->delete_short_link: #{e}"
 end
 ```
@@ -135,7 +135,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->delete_short_link_with_http_info: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ Gets the details of a shortened link by ID
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -185,7 +185,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::LinksApi.new
+api_instance = SlipstreamClient::LinksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 link_slug = 'link_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link
 
@@ -193,7 +193,7 @@ begin
   # Get Shortened Link
   result = api_instance.get_short_link(site_slug, link_slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->get_short_link: #{e}"
 end
 ```
@@ -211,7 +211,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ShortenedLink>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->get_short_link_with_http_info: #{e}"
 end
 ```
@@ -249,9 +249,9 @@ Lists active short links for the site
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -261,7 +261,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::LinksApi.new
+api_instance = SlipstreamClient::LinksApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 opts = {
   page_size: 50, # Integer | The page number to retrieve
@@ -274,7 +274,7 @@ begin
   # List Shortened Links
   result = api_instance.list_short_links(site_slug, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->list_short_links: #{e}"
 end
 ```
@@ -292,7 +292,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ShortenedLinksListResponse>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LinksApi->list_short_links_with_http_info: #{e}"
 end
 ```

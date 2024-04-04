@@ -1,4 +1,4 @@
-# OpenapiClient::SitesApi
+# SlipstreamClient::SitesApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -22,24 +22,24 @@ Deletes a practice site from the slipstream practice registry. Will also delete 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SitesApi.new
+api_instance = SlipstreamClient::SitesApi.new
 site_identifier = 'site_identifier_example' # String | The PMS-specific id that uniquely identifies a physical practice site (What you call the site in your software)
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Delete a practice site
   result = api_instance.delete_site(site_identifier, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->delete_site: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteDeleted>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->delete_site_with_http_info: #{e}"
 end
 ```
@@ -95,24 +95,24 @@ Fetches the identity of a given practice in slipstream and API Keys which can be
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SitesApi.new
+api_instance = SlipstreamClient::SitesApi.new
 site_identifier = 'site_identifier_example' # String | The PMS-specific id that uniquely identifies a physical practice site (What you call the site in your software)
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Get practice identity
   result = api_instance.get_practice_site_identity_with_keys(site_identifier, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->get_practice_site_identity_with_keys: #{e}"
 end
 ```
@@ -130,7 +130,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteIdentityWithKeys>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->get_practice_site_identity_with_keys_with_http_info: #{e}"
 end
 ```
@@ -168,14 +168,14 @@ Lists practice sites in the slipstream practice registry
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SitesApi.new
+api_instance = SlipstreamClient::SitesApi.new
 opts = {
   page_size: 10, # Integer | The page number to retrieve
   next_page_token: 'next_page_token_example', # String | A token retrieved from a previous request, used to retrieve the next page of results
@@ -184,14 +184,14 @@ opts = {
   billing_organisations: ['s8n6EzC'], # Array<String> | The slugs of the billing organisation to return sites for
   countries: ['USA'], # Array<String> | The countries to return sites for
   is_active: false, # Boolean | Filter active or inactive sites. Omit to return active sites only.
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # List Practice Sites
   result = api_instance.list_practice_sites(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->list_practice_sites: #{e}"
 end
 ```
@@ -209,7 +209,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteListResponse>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->list_practice_sites_with_http_info: #{e}"
 end
 ```
@@ -253,25 +253,25 @@ Creates a practice site in the slipstream practice registry and returns a unique
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SitesApi.new
+api_instance = SlipstreamClient::SitesApi.new
 site_identifier = 'site_identifier_example' # String | The PMS-specific id that uniquely identifies a physical practice site (What you call the site in your software)
-practice_site_onboarding_request = OpenapiClient::PracticeSiteOnboardingRequest.new({name: 'DentalCare Clinic', address: OpenapiClient::StreetAddress.new({address_line1: '123 Main St', country: 'USA'})}) # PracticeSiteOnboardingRequest | The details of the practice to onboard
+practice_site_onboarding_request = SlipstreamClient::PracticeSiteOnboardingRequest.new({name: 'DentalCare Clinic', address: SlipstreamClient::StreetAddress.new({address_line1: '123 Main St', country: 'USA'})}) # PracticeSiteOnboardingRequest | The details of the practice to onboard
 opts = {
-  x_practice_management_software: OpenapiClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
+  x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
 begin
   # Upsert practice site
   result = api_instance.onboard_site(site_identifier, practice_site_onboarding_request, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->onboard_site: #{e}"
 end
 ```
@@ -289,7 +289,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteIdentityWithKeys>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SitesApi->onboard_site_with_http_info: #{e}"
 end
 ```

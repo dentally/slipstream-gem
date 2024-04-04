@@ -1,4 +1,4 @@
-# OpenapiClient::LookupApi
+# SlipstreamClient::LookupApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -19,21 +19,21 @@ Fetches the pms specific id of a given organisation or practice in slipstream
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::LookupApi.new
+api_instance = SlipstreamClient::LookupApi.new
 slug = 'slug_example' # String | The slug of a practice site or organisation
 
 begin
   # Lookup Slug
   result = api_instance.lookup_slug(slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LookupApi->lookup_slug: #{e}"
 end
 ```
@@ -51,7 +51,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeEntity>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling LookupApi->lookup_slug_with_http_info: #{e}"
 end
 ```

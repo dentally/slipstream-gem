@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteIdentityWithKeys
+# SlipstreamClient::PracticeSiteIdentityWithKeys
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteIdentityWithKeys.new(
+instance = SlipstreamClient::PracticeSiteIdentityWithKeys.new(
   identity: null,
   practice_site_api_keys: null
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::ShortenedLink
+# SlipstreamClient::ShortenedLink
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::ShortenedLink.new(
+instance = SlipstreamClient::ShortenedLink.new(
   link_slug: s8n6EzC,
   primary_short_link: https://l.hsone.app/l4n6EzC,
   full_link: https://www.google.com?q&#x3D;sqids,

@@ -1,4 +1,4 @@
-# OpenapiClient::WebhookSubscriptionHeadersInner
+# SlipstreamClient::WebhookSubscriptionHeadersInner
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::WebhookSubscriptionHeadersInner.new(
+instance = SlipstreamClient::WebhookSubscriptionHeadersInner.new(
   name: X-API-KEY,
   value: 1234567890abcdef1234567890abcdef
 )

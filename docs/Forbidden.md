@@ -1,4 +1,4 @@
-# OpenapiClient::Forbidden
+# SlipstreamClient::Forbidden
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::Forbidden.new(
+instance = SlipstreamClient::Forbidden.new(
   type: null,
   title: null,
   status: null,

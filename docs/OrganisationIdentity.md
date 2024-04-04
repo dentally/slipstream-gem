@@ -1,4 +1,4 @@
-# OpenapiClient::OrganisationIdentity
+# SlipstreamClient::OrganisationIdentity
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::OrganisationIdentity.new(
+instance = SlipstreamClient::OrganisationIdentity.new(
   name: All your teeth are belong to us LTD,
   practice_management_software: null,
   pms_specific_organisation_id: 04d2f2f0-8f1a-11eb-8dcd-0242ac130003,

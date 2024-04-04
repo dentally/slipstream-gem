@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteIdentity
+# SlipstreamClient::PracticeSiteIdentity
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteIdentity.new(
+instance = SlipstreamClient::PracticeSiteIdentity.new(
   name: The Friendly Dentist,
   practice_management_software: null,
   pms_specific_site_id: 04d2f2f0-8f1a-11eb-8dcd-0242ac130003,

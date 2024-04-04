@@ -1,4 +1,4 @@
-# OpenapiClient::StreetAddress
+# SlipstreamClient::StreetAddress
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::StreetAddress.new(
+instance = SlipstreamClient::StreetAddress.new(
   address_line1: 123 Main St,
   address_line2: Apt 4,
   locality: San Francisco,

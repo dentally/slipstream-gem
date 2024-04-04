@@ -1,4 +1,4 @@
-# OpenapiClient::AccessToken
+# SlipstreamClient::AccessToken
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::AccessToken.new(
+instance = SlipstreamClient::AccessToken.new(
   access_token: null,
   token_type: null,
   expires_in: null,

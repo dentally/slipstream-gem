@@ -1,4 +1,4 @@
-# OpenapiClient::Addressee
+# SlipstreamClient::Addressee
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::Addressee.new(
+instance = SlipstreamClient::Addressee.new(
   pms_specific_id: 1234567890abcdef1234567890abcdef,
   given_name: John,
   middle_name: Danger Blanket,

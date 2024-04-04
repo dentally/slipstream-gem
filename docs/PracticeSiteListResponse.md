@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteListResponse
+# SlipstreamClient::PracticeSiteListResponse
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteListResponse.new(
+instance = SlipstreamClient::PracticeSiteListResponse.new(
   items: null,
   next_page_token: eyJ0eXAiOi
 )

@@ -1,4 +1,4 @@
-# OpenapiClient::PagedResponse
+# SlipstreamClient::PagedResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PagedResponse.new(
+instance = SlipstreamClient::PagedResponse.new(
   next_page_token: eyJ0eXAiOi
 )
 ```

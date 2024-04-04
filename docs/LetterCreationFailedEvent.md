@@ -1,4 +1,4 @@
-# OpenapiClient::LetterCreationFailedEvent
+# SlipstreamClient::LetterCreationFailedEvent
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::LetterCreationFailedEvent.new(
+instance = SlipstreamClient::LetterCreationFailedEvent.new(
   record_id: 064a5f0e-0b0e-4e1e-8e1e-0e0e0e0e0e0e,
   color: false,
   express: false

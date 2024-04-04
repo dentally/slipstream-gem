@@ -1,4 +1,4 @@
-# OpenapiClient::ShortenedLinksListResponse
+# SlipstreamClient::ShortenedLinksListResponse
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::ShortenedLinksListResponse.new(
+instance = SlipstreamClient::ShortenedLinksListResponse.new(
   items: null,
   next_page_token: eyJ0eXAiOi
 )

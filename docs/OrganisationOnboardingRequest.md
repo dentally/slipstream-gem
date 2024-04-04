@@ -1,4 +1,4 @@
-# OpenapiClient::OrganisationOnboardingRequest
+# SlipstreamClient::OrganisationOnboardingRequest
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::OrganisationOnboardingRequest.new(
+instance = SlipstreamClient::OrganisationOnboardingRequest.new(
   name: Dental Mega Corp,
   website: https://dental-mega-corp.com/ouch-my-teeth,
   primary_email_address: admin@dental-mega-corp.com,

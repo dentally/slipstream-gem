@@ -1,4 +1,4 @@
-# OpenapiClient::UnprocessableEntity
+# SlipstreamClient::UnprocessableEntity
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::UnprocessableEntity.new(
+instance = SlipstreamClient::UnprocessableEntity.new(
   type: null,
   title: null,
   status: null,

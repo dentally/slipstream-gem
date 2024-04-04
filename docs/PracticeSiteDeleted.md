@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteDeleted
+# SlipstreamClient::PracticeSiteDeleted
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteDeleted.new(
+instance = SlipstreamClient::PracticeSiteDeleted.new(
   identity: null,
   deleted_organisation: null
 )

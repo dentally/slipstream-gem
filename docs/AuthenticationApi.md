@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticationApi
+# SlipstreamClient::AuthenticationApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -20,9 +20,9 @@ This endpoint is used to obtain an access token by using client credentials or u
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 
-api_instance = OpenapiClient::AuthenticationApi.new
+api_instance = SlipstreamClient::AuthenticationApi.new
 grant_type = 'client_credentials' # String | Grant type value - currently only client_credentials is explicitly supported.
 client_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The client's identifier.
 client_secret = 'client_secret_example' # String | The client's secret.
@@ -31,7 +31,7 @@ begin
   # Get an access token
   result = api_instance.get_access_token(grant_type, client_id, client_secret)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling AuthenticationApi->get_access_token: #{e}"
 end
 ```
@@ -49,7 +49,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AccessToken>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling AuthenticationApi->get_access_token_with_http_info: #{e}"
 end
 ```
@@ -86,20 +86,20 @@ Gets the details of the current access token.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticationApi.new
+api_instance = SlipstreamClient::AuthenticationApi.new
 
 begin
   # Gets the details of the current access token.
   result = api_instance.inspect_access_token
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling AuthenticationApi->inspect_access_token: #{e}"
 end
 ```
@@ -117,7 +117,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AccessTokenDetails>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling AuthenticationApi->inspect_access_token_with_http_info: #{e}"
 end
 ```

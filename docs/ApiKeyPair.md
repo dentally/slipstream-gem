@@ -1,4 +1,4 @@
-# OpenapiClient::ApiKeyPair
+# SlipstreamClient::ApiKeyPair
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::ApiKeyPair.new(
+instance = SlipstreamClient::ApiKeyPair.new(
   primary_key: 1234567890abcdef1234567890abcdef,
   secondary_key: 1234567890abcdef1234567890abcdef
 )

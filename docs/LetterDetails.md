@@ -1,4 +1,4 @@
-# OpenapiClient::LetterDetails
+# SlipstreamClient::LetterDetails
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::LetterDetails.new(
+instance = SlipstreamClient::LetterDetails.new(
   letter_id: null,
   record_id: null,
   pms_specific_id: null,

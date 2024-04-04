@@ -1,4 +1,4 @@
-# OpenapiClient::ShortenLinkRequest
+# SlipstreamClient::ShortenLinkRequest
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::ShortenLinkRequest.new(
+instance = SlipstreamClient::ShortenLinkRequest.new(
   full_link: https://www.google.com?q&#x3D;sqids,
   click_tracking_enabled: false,
   sliding_expiration: 90.00:00:00,

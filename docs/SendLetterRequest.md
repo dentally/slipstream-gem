@@ -1,4 +1,4 @@
-# OpenapiClient::SendLetterRequest
+# SlipstreamClient::SendLetterRequest
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::SendLetterRequest.new(
+instance = SlipstreamClient::SendLetterRequest.new(
   pms_specific_id: {064a5f0e-0b0e-4e1e-8e1e-0e0e0e0e0e0e},
   scheduled_send_date: 2023-10-24T14:30:15+02:00,
   addressee: null,

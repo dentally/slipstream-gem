@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeEntityType
+# SlipstreamClient::PracticeEntityType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeEntityType.new()
+instance = SlipstreamClient::PracticeEntityType.new()
 ```
 

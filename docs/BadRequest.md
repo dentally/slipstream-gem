@@ -1,4 +1,4 @@
-# OpenapiClient::BadRequest
+# SlipstreamClient::BadRequest
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::BadRequest.new(
+instance = SlipstreamClient::BadRequest.new(
   type: null,
   title: null,
   status: null,

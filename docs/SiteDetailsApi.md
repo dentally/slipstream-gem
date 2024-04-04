@@ -1,4 +1,4 @@
-# OpenapiClient::SiteDetailsApi
+# SlipstreamClient::SiteDetailsApi
 
 All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 
@@ -25,9 +25,9 @@ Adds a single capability to the list of functionality that the practice site sup
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -37,14 +37,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-capability = OpenapiClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
+capability = SlipstreamClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
 
 begin
   # Add capability
   api_instance.add_practice_site_capability(site_slug, capability)
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->add_practice_site_capability: #{e}"
 end
 ```
@@ -62,7 +62,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->add_practice_site_capability_with_http_info: #{e}"
 end
 ```
@@ -100,9 +100,9 @@ Fetches the full details of a practice site in the slipstream practice registry
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -112,14 +112,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 
 begin
   # Get practice site details
   result = api_instance.get_practice_site_details(site_slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->get_practice_site_details: #{e}"
 end
 ```
@@ -137,7 +137,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteDetails>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->get_practice_site_details_with_http_info: #{e}"
 end
 ```
@@ -174,9 +174,9 @@ Fetches the list of functionality that a practice site (and the software it is u
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -186,14 +186,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
 
 begin
   # List capabilities
   result = api_instance.list_practice_site_capabilities(site_slug)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->list_practice_site_capabilities: #{e}"
 end
 ```
@@ -211,7 +211,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Capability>>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->list_practice_site_capabilities_with_http_info: #{e}"
 end
 ```
@@ -248,9 +248,9 @@ Checks if the practice supports a capability. See [Capabilities](#section/Gettin
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -260,15 +260,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-capability = OpenapiClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
+capability = SlipstreamClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
 
 begin
   # Check capability
   result = api_instance.practice_site_has_capability(site_slug, capability)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->practice_site_has_capability: #{e}"
 end
 ```
@@ -286,7 +286,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Boolean
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->practice_site_has_capability_with_http_info: #{e}"
 end
 ```
@@ -324,9 +324,9 @@ Removes a capability from a practice. See [Capabilities](#section/Getting-starte
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -336,14 +336,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-capability = OpenapiClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
+capability = SlipstreamClient::Capability::BILLING # Capability | The capability to add to the practice, see [Capabilities](#section/Getting-started/Capabilities) for more details.
 
 begin
   # Remove capability
   api_instance.remove_practice_site_capability(site_slug, capability)
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->remove_practice_site_capability: #{e}"
 end
 ```
@@ -361,7 +361,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->remove_practice_site_capability_with_http_info: #{e}"
 end
 ```
@@ -399,9 +399,9 @@ Updates the details of a practice site in the Slipstream practice registry
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -411,15 +411,15 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-update_practice_site_details_request = OpenapiClient::UpdatePracticeSiteDetailsRequest.new # UpdatePracticeSiteDetailsRequest | The details of the practice site to onboard
+update_practice_site_details_request = SlipstreamClient::UpdatePracticeSiteDetailsRequest.new # UpdatePracticeSiteDetailsRequest | The details of the practice site to onboard
 
 begin
   # Update practice site details
   result = api_instance.update_practice_site(site_slug, update_practice_site_details_request)
   p result
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->update_practice_site: #{e}"
 end
 ```
@@ -437,7 +437,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PracticeSiteIdentity>
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->update_practice_site_with_http_info: #{e}"
 end
 ```
@@ -475,9 +475,9 @@ Replaces the list of functionality that a practice site (and the software it is 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'slipstream_client'
 # setup authorization
-OpenapiClient.configure do |config|
+SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -487,14 +487,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = OpenapiClient::SiteDetailsApi.new
+api_instance = SlipstreamClient::SiteDetailsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-capability = [OpenapiClient::Capability::BILLING] # Array<Capability> | The capabilities supported by the practice site
+capability = [SlipstreamClient::Capability::BILLING] # Array<Capability> | The capabilities supported by the practice site
 
 begin
   # Replace capabilities
   api_instance.update_practice_site_capabilities(site_slug, capability)
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->update_practice_site_capabilities: #{e}"
 end
 ```
@@ -512,7 +512,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue SlipstreamClient::ApiError => e
   puts "Error when calling SiteDetailsApi->update_practice_site_capabilities_with_http_info: #{e}"
 end
 ```

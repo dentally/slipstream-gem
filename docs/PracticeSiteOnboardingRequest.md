@@ -1,4 +1,4 @@
-# OpenapiClient::PracticeSiteOnboardingRequest
+# SlipstreamClient::PracticeSiteOnboardingRequest
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'slipstream_client'
 
-instance = OpenapiClient::PracticeSiteOnboardingRequest.new(
+instance = SlipstreamClient::PracticeSiteOnboardingRequest.new(
   name: DentalCare Clinic,
   address: null,
   postal_address: null,
