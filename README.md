@@ -181,3 +181,12 @@ Authentication schemes defined for the API:
 - **API key parameter name**: X-API-KEY
 - **Location**: HTTP header
 
+
+## Build this gem
+
+```
+openapi-generator generate -i https://dev.slipstream.hsone.app/swagger/v1/swagger.json -g ruby -c openapi-generator-gem-config.yaml -o . --git-repo-id slipstream-gem --git-user-id dentally
+
+# bump verion
+gem build slipstream_client.gemspec
+```
