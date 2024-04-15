@@ -177,13 +177,13 @@ end
 
 api_instance = SlipstreamClient::SitesApi.new
 opts = {
-  page_size: 10, # Integer | The page number to retrieve
+  page_size: 50, # Integer | The page number to retrieve
   next_page_token: 'next_page_token_example', # String | A token retrieved from a previous request, used to retrieve the next page of results
   sites: ['s8n6EzC'], # Array<String> | The slugs of the sites to return
   owning_organisations: ['s8n6EzC'], # Array<String> | The slugs of the owning organisation to return sites for
   billing_organisations: ['s8n6EzC'], # Array<String> | The slugs of the billing organisation to return sites for
   countries: ['USA'], # Array<String> | The countries to return sites for
-  is_active: false, # Boolean | Filter active or inactive sites. Omit to return active sites only.
+  is_active: false, # Boolean | Filter active or inactive sites.
   x_practice_management_software: SlipstreamClient::PracticeManagementSoftware::UNKNOWN # PracticeManagementSoftware | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
 }
 
@@ -224,7 +224,7 @@ end
 | **owning_organisations** | [**Array&lt;String&gt;**](String.md) | The slugs of the owning organisation to return sites for | [optional] |
 | **billing_organisations** | [**Array&lt;String&gt;**](String.md) | The slugs of the billing organisation to return sites for | [optional] |
 | **countries** | [**Array&lt;String&gt;**](String.md) | The countries to return sites for | [optional] |
-| **is_active** | **Boolean** | Filter active or inactive sites. Omit to return active sites only. | [optional] |
+| **is_active** | **Boolean** | Filter active or inactive sites. | [optional] |
 | **x_practice_management_software** | [**PracticeManagementSoftware**](.md) | The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.**  | [optional] |
 
 ### Return type

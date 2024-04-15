@@ -15,10 +15,10 @@ require 'time'
 
 module SlipstreamClient
   class PracticeManagementSoftware
-    UNKNOWN = "UNKNOWN".freeze
-    TESTING = "TESTING".freeze
-    EXACT = "EXACT".freeze
-    DENTALLY = "DENTALLY".freeze
+    UNKNOWN = "Unknown".freeze
+    TESTING = "Testing".freeze
+    EXACT = "Exact".freeze
+    DENTALLY = "Dentally".freeze
 
     def self.all_vars
       @all_vars ||= [UNKNOWN, TESTING, EXACT, DENTALLY].freeze

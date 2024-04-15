@@ -160,7 +160,7 @@ module SlipstreamClient
     # @option opts [Array<String>] :owning_organisations The slugs of the owning organisation to return sites for
     # @option opts [Array<String>] :billing_organisations The slugs of the billing organisation to return sites for
     # @option opts [Array<String>] :countries The countries to return sites for
-    # @option opts [Boolean] :is_active Filter active or inactive sites. Omit to return active sites only.
+    # @option opts [Boolean] :is_active Filter active or inactive sites.
     # @option opts [PracticeManagementSoftware] :x_practice_management_software The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
     # @return [PracticeSiteListResponse]
     def list_practice_sites(opts = {})
@@ -177,15 +177,15 @@ module SlipstreamClient
     # @option opts [Array<String>] :owning_organisations The slugs of the owning organisation to return sites for
     # @option opts [Array<String>] :billing_organisations The slugs of the billing organisation to return sites for
     # @option opts [Array<String>] :countries The countries to return sites for
-    # @option opts [Boolean] :is_active Filter active or inactive sites. Omit to return active sites only.
+    # @option opts [Boolean] :is_active Filter active or inactive sites.
     # @option opts [PracticeManagementSoftware] :x_practice_management_software The intended practice management software for the request, used to disambiguate a pms specific identifier when you have access to multiple PMS systems.   **Omit this if you only have access to a single PMS.** 
     # @return [Array<(PracticeSiteListResponse, Integer, Hash)>] PracticeSiteListResponse data, response status code and response headers
     def list_practice_sites_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SitesApi.list_practice_sites ...'
       end
-      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] > 50
-        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling SitesApi.list_practice_sites, must be smaller than or equal to 50.'
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] > 250
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling SitesApi.list_practice_sites, must be smaller than or equal to 250.'
       end
 
       if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] < 1

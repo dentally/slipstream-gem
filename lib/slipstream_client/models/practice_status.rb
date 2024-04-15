@@ -15,11 +15,11 @@ require 'time'
 
 module SlipstreamClient
   class PracticeStatus
-    UNKNOWN = "UNKNOWN".freeze
-    OPERATIONAL = "OPERATIONAL".freeze
-    TEMPORARILY_CLOSED = "TEMPORARILY_CLOSED".freeze
-    PERMANENTLY_CLOSED = "PERMANENTLY_CLOSED".freeze
-    GONE = "GONE".freeze
+    UNKNOWN = "Unknown".freeze
+    OPERATIONAL = "Operational".freeze
+    TEMPORARILY_CLOSED = "TemporarilyClosed".freeze
+    PERMANENTLY_CLOSED = "PermanentlyClosed".freeze
+    GONE = "Gone".freeze
 
     def self.all_vars
       @all_vars ||= [UNKNOWN, OPERATIONAL, TEMPORARILY_CLOSED, PERMANENTLY_CLOSED, GONE].freeze

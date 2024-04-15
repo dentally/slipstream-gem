@@ -15,8 +15,8 @@ require 'time'
 
 module SlipstreamClient
   class Capability
-    BILLING = "BILLING".freeze
-    PHYSICAL_POST = "PHYSICAL_POST".freeze
+    BILLING = "Billing".freeze
+    PHYSICAL_POST = "PhysicalPost".freeze
 
     def self.all_vars
       @all_vars ||= [BILLING, PHYSICAL_POST].freeze
