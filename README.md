@@ -87,8 +87,11 @@ Class | Method | HTTP request | Description
 *SlipstreamClient::LinksApi* | [**list_short_links**](docs/LinksApi.md#list_short_links) | **GET** /sites/{SiteSlug}/links | List Shortened Links
 *SlipstreamClient::LookupApi* | [**lookup_slug**](docs/LookupApi.md#lookup_slug) | **GET** /lookup/slug/{Slug} | Lookup Slug
 *SlipstreamClient::OrganisationsApi* | [**delete_organisation**](docs/OrganisationsApi.md#delete_organisation) | **DELETE** /management/organisations/{OrganisationIdentifier} | Delete an organisation
+*SlipstreamClient::OrganisationsApi* | [**get_billing_item**](docs/OrganisationsApi.md#get_billing_item) | **GET** /management/organisations/{OrganisationSlug}/billing/{ItemId} | Get a specific billing item's details
+*SlipstreamClient::OrganisationsApi* | [**get_billing_summary**](docs/OrganisationsApi.md#get_billing_summary) | **GET** /management/organisations/{OrganisationSlug}/billing/summary | Get a summary of billing for an organisation
 *SlipstreamClient::OrganisationsApi* | [**get_organisation**](docs/OrganisationsApi.md#get_organisation) | **GET** /management/organisations/{OrganisationIdentifier} | Get an organisation
 *SlipstreamClient::OrganisationsApi* | [**get_organisation_identity**](docs/OrganisationsApi.md#get_organisation_identity) | **GET** /management/organisations/{OrganisationIdentifier}/identity | Get organisation identity
+*SlipstreamClient::OrganisationsApi* | [**list_billing_items**](docs/OrganisationsApi.md#list_billing_items) | **GET** /management/organisations/{OrganisationSlug}/billing | Get a list of billing item's for an organisation
 *SlipstreamClient::OrganisationsApi* | [**onboard_organisation**](docs/OrganisationsApi.md#onboard_organisation) | **POST** /management/organisations/{OrganisationIdentifier} | Upsert organisation
 *SlipstreamClient::PhysicalPostApi* | [**create_letters**](docs/PhysicalPostApi.md#create_letters) | **POST** /sites/{SiteSlug}/physicalpost/letter | Send letters
 *SlipstreamClient::PhysicalPostApi* | [**get_letter**](docs/PhysicalPostApi.md#get_letter) | **GET** /sites/{SiteSlug}/physicalpost/letter/{LetterId} | Get the letter details of a specific letter
@@ -116,6 +119,10 @@ Class | Method | HTTP request | Description
  - [SlipstreamClient::Addressee](docs/Addressee.md)
  - [SlipstreamClient::ApiKeyPair](docs/ApiKeyPair.md)
  - [SlipstreamClient::BadRequest](docs/BadRequest.md)
+ - [SlipstreamClient::BillingItemDetails](docs/BillingItemDetails.md)
+ - [SlipstreamClient::BillingItemDetailsListResponse](docs/BillingItemDetailsListResponse.md)
+ - [SlipstreamClient::BillingSummary](docs/BillingSummary.md)
+ - [SlipstreamClient::BillingSummaryDetails](docs/BillingSummaryDetails.md)
  - [SlipstreamClient::Capability](docs/Capability.md)
  - [SlipstreamClient::CloudEvent](docs/CloudEvent.md)
  - [SlipstreamClient::Coordinates](docs/Coordinates.md)
@@ -181,12 +188,3 @@ Authentication schemes defined for the API:
 - **API key parameter name**: X-API-KEY
 - **Location**: HTTP header
 
-
-## Build this gem
-
-```
-openapi-generator generate -i https://dev.slipstream.hsone.app/swagger/v1/swagger.json -g ruby -c openapi-generator-gem-config.yaml -o . --git-repo-id slipstream-gem --git-user-id dentally
-
-# bump verion
-gem build slipstream_client.gemspec
-```
