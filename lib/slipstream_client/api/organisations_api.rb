@@ -85,6 +85,154 @@ module SlipstreamClient
       return data, status_code, headers
     end
 
+    # Get a specific billing item's details
+    # Gets a specific billing item's details
+    # @param organisation_slug [String] The organisation slug to retrieve billing records for
+    # @param item_id [String] The unique identifier of the billing item
+    # @param [Hash] opts the optional parameters
+    # @return [BillingItemDetails]
+    def get_billing_item(organisation_slug, item_id, opts = {})
+      data, _status_code, _headers = get_billing_item_with_http_info(organisation_slug, item_id, opts)
+      data
+    end
+
+    # Get a specific billing item&#39;s details
+    # Gets a specific billing item&#39;s details
+    # @param organisation_slug [String] The organisation slug to retrieve billing records for
+    # @param item_id [String] The unique identifier of the billing item
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(BillingItemDetails, Integer, Hash)>] BillingItemDetails data, response status code and response headers
+    def get_billing_item_with_http_info(organisation_slug, item_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OrganisationsApi.get_billing_item ...'
+      end
+      # verify the required parameter 'organisation_slug' is set
+      if @api_client.config.client_side_validation && organisation_slug.nil?
+        fail ArgumentError, "Missing the required parameter 'organisation_slug' when calling OrganisationsApi.get_billing_item"
+      end
+      pattern = Regexp.new(/^[osl][a-zA-Z0-9]{3,}$/)
+      if @api_client.config.client_side_validation && organisation_slug !~ pattern
+        fail ArgumentError, "invalid value for 'organisation_slug' when calling OrganisationsApi.get_billing_item, must conform to the pattern #{pattern}."
+      end
+
+      # verify the required parameter 'item_id' is set
+      if @api_client.config.client_side_validation && item_id.nil?
+        fail ArgumentError, "Missing the required parameter 'item_id' when calling OrganisationsApi.get_billing_item"
+      end
+      # resource path
+      local_var_path = '/management/organisations/{OrganisationSlug}/billing/{ItemId}'.sub('{' + 'OrganisationSlug' + '}', CGI.escape(organisation_slug.to_s)).sub('{' + 'ItemId' + '}', CGI.escape(item_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/problem+json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BillingItemDetails'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+
+      new_options = opts.merge(
+        :operation => :"OrganisationsApi.get_billing_item",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OrganisationsApi#get_billing_item\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a summary of billing for an organisation
+    # Gets a summary of billing for an organisation
+    # @param organisation_slug [String] The organisation slug to retrieve the billing summary for
+    # @param [Hash] opts the optional parameters
+    # @option opts [Time] :date_from The start of the date range of the billing summary (inclusive)
+    # @option opts [Time] :date_to The end of the date range of the billing summary (inclusive)
+    # @return [BillingSummaryDetails]
+    def get_billing_summary(organisation_slug, opts = {})
+      data, _status_code, _headers = get_billing_summary_with_http_info(organisation_slug, opts)
+      data
+    end
+
+    # Get a summary of billing for an organisation
+    # Gets a summary of billing for an organisation
+    # @param organisation_slug [String] The organisation slug to retrieve the billing summary for
+    # @param [Hash] opts the optional parameters
+    # @option opts [Time] :date_from The start of the date range of the billing summary (inclusive)
+    # @option opts [Time] :date_to The end of the date range of the billing summary (inclusive)
+    # @return [Array<(BillingSummaryDetails, Integer, Hash)>] BillingSummaryDetails data, response status code and response headers
+    def get_billing_summary_with_http_info(organisation_slug, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OrganisationsApi.get_billing_summary ...'
+      end
+      # verify the required parameter 'organisation_slug' is set
+      if @api_client.config.client_side_validation && organisation_slug.nil?
+        fail ArgumentError, "Missing the required parameter 'organisation_slug' when calling OrganisationsApi.get_billing_summary"
+      end
+      pattern = Regexp.new(/^[osl][a-zA-Z0-9]{3,}$/)
+      if @api_client.config.client_side_validation && organisation_slug !~ pattern
+        fail ArgumentError, "invalid value for 'organisation_slug' when calling OrganisationsApi.get_billing_summary, must conform to the pattern #{pattern}."
+      end
+
+      # resource path
+      local_var_path = '/management/organisations/{OrganisationSlug}/billing/summary'.sub('{' + 'OrganisationSlug' + '}', CGI.escape(organisation_slug.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'dateFrom'] = opts[:'date_from'] if !opts[:'date_from'].nil?
+      query_params[:'dateTo'] = opts[:'date_to'] if !opts[:'date_to'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/problem+json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BillingSummaryDetails'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+
+      new_options = opts.merge(
+        :operation => :"OrganisationsApi.get_billing_summary",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OrganisationsApi#get_billing_summary\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get an organisation
     # Fetches the details of a given organisation in slipstream
     # @param organisation_identifier [String] The PMS-specific id that uniquely identifies an organisation (What you call the organisation in your software), which owns one or more practice sites
@@ -213,6 +361,94 @@ module SlipstreamClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrganisationsApi#get_organisation_identity\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a list of billing item's for an organisation
+    # Gets a list of billing item details for the organisation
+    # @param organisation_slug [String] The organisation slug to retrieve billing records for
+    # @param [Hash] opts the optional parameters
+    # @option opts [Time] :date_from The date to retrieve letters from
+    # @option opts [Time] :date_to The date to retrieve letters to
+    # @option opts [Integer] :page_size The page number to retrieve
+    # @option opts [String] :next_page_token A token retrieved from a previous request, used to retrieve the next page of results
+    # @return [BillingItemDetailsListResponse]
+    def list_billing_items(organisation_slug, opts = {})
+      data, _status_code, _headers = list_billing_items_with_http_info(organisation_slug, opts)
+      data
+    end
+
+    # Get a list of billing item&#39;s for an organisation
+    # Gets a list of billing item details for the organisation
+    # @param organisation_slug [String] The organisation slug to retrieve billing records for
+    # @param [Hash] opts the optional parameters
+    # @option opts [Time] :date_from The date to retrieve letters from
+    # @option opts [Time] :date_to The date to retrieve letters to
+    # @option opts [Integer] :page_size The page number to retrieve
+    # @option opts [String] :next_page_token A token retrieved from a previous request, used to retrieve the next page of results
+    # @return [Array<(BillingItemDetailsListResponse, Integer, Hash)>] BillingItemDetailsListResponse data, response status code and response headers
+    def list_billing_items_with_http_info(organisation_slug, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OrganisationsApi.list_billing_items ...'
+      end
+      # verify the required parameter 'organisation_slug' is set
+      if @api_client.config.client_side_validation && organisation_slug.nil?
+        fail ArgumentError, "Missing the required parameter 'organisation_slug' when calling OrganisationsApi.list_billing_items"
+      end
+      pattern = Regexp.new(/^[osl][a-zA-Z0-9]{3,}$/)
+      if @api_client.config.client_side_validation && organisation_slug !~ pattern
+        fail ArgumentError, "invalid value for 'organisation_slug' when calling OrganisationsApi.list_billing_items, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] > 250
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling OrganisationsApi.list_billing_items, must be smaller than or equal to 250.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling OrganisationsApi.list_billing_items, must be greater than or equal to 1.'
+      end
+
+      # resource path
+      local_var_path = '/management/organisations/{OrganisationSlug}/billing'.sub('{' + 'OrganisationSlug' + '}', CGI.escape(organisation_slug.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'dateFrom'] = opts[:'date_from'] if !opts[:'date_from'].nil?
+      query_params[:'dateTo'] = opts[:'date_to'] if !opts[:'date_to'].nil?
+      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
+      query_params[:'nextPageToken'] = opts[:'next_page_token'] if !opts[:'next_page_token'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/problem+json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BillingItemDetailsListResponse'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+
+      new_options = opts.merge(
+        :operation => :"OrganisationsApi.list_billing_items",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OrganisationsApi#list_billing_items\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
