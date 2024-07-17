@@ -6,5 +6,6 @@ gem_description: |
   # To build
   `openapi-generator generate -i https://dev.slipstream.hsone.app/swagger/v1/swagger.json -g ruby -c openapi-generator-gem-config.yaml -o . --git-repo-id slipstream-gem --git-user-id dentally`
 
+  increment version number in lib/slipstream_client/version.rb
   # Then rebuild after bumping the gem version where appropriate
   gem build slipstream_client.gemspec
