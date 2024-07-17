@@ -68,7 +68,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'WebhookSubscriptionDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostWebhooksApi.get_physical_post_subscription",
@@ -147,7 +147,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'WebhookSubscription'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostWebhooksApi.subscribe_to_physical_post",
@@ -215,7 +215,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'WebhookSubscription'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostWebhooksApi.unsubscribe_to_physical_post",

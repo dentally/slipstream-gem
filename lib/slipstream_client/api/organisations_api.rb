@@ -66,7 +66,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'String'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.delete_organisation",
@@ -140,7 +140,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'BillingItemDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.get_billing_item",
@@ -214,7 +214,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'BillingSummaryDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.get_billing_summary",
@@ -280,7 +280,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'OrganisationDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.get_organisation",
@@ -346,7 +346,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'OrganisationIdentity'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.get_organisation_identity",
@@ -434,7 +434,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'BillingItemDetailsListResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.list_billing_items",
@@ -511,7 +511,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'OrganisationIdentity'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"OrganisationsApi.onboard_organisation",

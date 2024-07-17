@@ -1,22 +1,22 @@
-# SlipstreamClient::LinksApi
+# SlipstreamClient::PaymentsApi
 
 All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**create_short_links**](LinksApi.md#create_short_links) | **POST** /sites/{SiteSlug}/links | Create short links |
-| [**delete_short_link**](LinksApi.md#delete_short_link) | **DELETE** /sites/{SiteSlug}/links/{LinkSlug} | Delete Shortened Link |
-| [**get_short_link**](LinksApi.md#get_short_link) | **GET** /sites/{SiteSlug}/links/{LinkSlug} | Get Shortened Link |
-| [**list_short_links**](LinksApi.md#list_short_links) | **GET** /sites/{SiteSlug}/links | List Shortened Links |
+| [**create_payment**](PaymentsApi.md#create_payment) | **POST** /sites/{SiteSlug}/payments | Create a payment |
+| [**create_payment_account**](PaymentsApi.md#create_payment_account) | **POST** /sites/{SiteSlug}/payments/accounts | Create account with payment provider |
+| [**get_payment**](PaymentsApi.md#get_payment) | **GET** /sites/{SiteSlug}/payments/{PaymentIdentifier} | Get Payment Details |
+| [**list_payment_accounts**](PaymentsApi.md#list_payment_accounts) | **GET** /sites/{SiteSlug}/payments/accounts | List payment provider accounts |
 
 
-## create_short_links
+## create_payment
 
-> <ShortLinksCreatedResponse> create_short_links(site_slug, shorten_link_request)
+> <PaymentDetails> create_payment(site_slug, create_payment_request)
 
-Create short links
+Create a payment
 
-Creates shortened versions of one or more URLs
+Creates a payment
 
 ### Examples
 
@@ -37,34 +37,34 @@ SlipstreamClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SlipstreamClient::LinksApi.new
+api_instance = SlipstreamClient::PaymentsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-shorten_link_request = [SlipstreamClient::ShortenLinkRequest.new({full_link: 'https://www.google.com?q=sqids'})] # Array<ShortenLinkRequest> | The long links to shorten
+create_payment_request = SlipstreamClient::CreatePaymentRequest.new({amount: 1000, currency: 'USD'}) # CreatePaymentRequest | The details of the payment to create
 
 begin
-  # Create short links
-  result = api_instance.create_short_links(site_slug, shorten_link_request)
+  # Create a payment
+  result = api_instance.create_payment(site_slug, create_payment_request)
   p result
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->create_short_links: #{e}"
+  puts "Error when calling PaymentsApi->create_payment: #{e}"
 end
 ```
 
-#### Using the create_short_links_with_http_info variant
+#### Using the create_payment_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ShortLinksCreatedResponse>, Integer, Hash)> create_short_links_with_http_info(site_slug, shorten_link_request)
+> <Array(<PaymentDetails>, Integer, Hash)> create_payment_with_http_info(site_slug, create_payment_request)
 
 ```ruby
 begin
-  # Create short links
-  data, status_code, headers = api_instance.create_short_links_with_http_info(site_slug, shorten_link_request)
+  # Create a payment
+  data, status_code, headers = api_instance.create_payment_with_http_info(site_slug, create_payment_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ShortLinksCreatedResponse>
+  p data # => <PaymentDetails>
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->create_short_links_with_http_info: #{e}"
+  puts "Error when calling PaymentsApi->create_payment_with_http_info: #{e}"
 end
 ```
 
@@ -73,11 +73,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **shorten_link_request** | [**Array&lt;ShortenLinkRequest&gt;**](ShortenLinkRequest.md) | The long links to shorten |  |
+| **create_payment_request** | [**CreatePaymentRequest**](CreatePaymentRequest.md) | The details of the payment to create |  |
 
 ### Return type
 
-[**ShortLinksCreatedResponse**](ShortLinksCreatedResponse.md)
+[**PaymentDetails**](PaymentDetails.md)
 
 ### Authorization
 
@@ -89,13 +89,13 @@ end
 - **Accept**: application/json, application/problem+json
 
 
-## delete_short_link
+## create_payment_account
 
-> delete_short_link(site_slug, link_slug)
+> <PaymentAccountCreatedResponse> create_payment_account(site_slug, create_payment_account_request)
 
-Delete Shortened Link
+Create account with payment provider
 
-Deletes a shortened link by ID
+Creates an account for the site with the specified payment provider
 
 ### Examples
 
@@ -116,33 +116,34 @@ SlipstreamClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SlipstreamClient::LinksApi.new
+api_instance = SlipstreamClient::PaymentsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-link_slug = 'link_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link
+create_payment_account_request = SlipstreamClient::CreatePaymentAccountRequest.new # CreatePaymentAccountRequest | The details of the payment to create
 
 begin
-  # Delete Shortened Link
-  api_instance.delete_short_link(site_slug, link_slug)
+  # Create account with payment provider
+  result = api_instance.create_payment_account(site_slug, create_payment_account_request)
+  p result
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->delete_short_link: #{e}"
+  puts "Error when calling PaymentsApi->create_payment_account: #{e}"
 end
 ```
 
-#### Using the delete_short_link_with_http_info variant
+#### Using the create_payment_account_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> delete_short_link_with_http_info(site_slug, link_slug)
+> <Array(<PaymentAccountCreatedResponse>, Integer, Hash)> create_payment_account_with_http_info(site_slug, create_payment_account_request)
 
 ```ruby
 begin
-  # Delete Shortened Link
-  data, status_code, headers = api_instance.delete_short_link_with_http_info(site_slug, link_slug)
+  # Create account with payment provider
+  data, status_code, headers = api_instance.create_payment_account_with_http_info(site_slug, create_payment_account_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => <PaymentAccountCreatedResponse>
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->delete_short_link_with_http_info: #{e}"
+  puts "Error when calling PaymentsApi->create_payment_account_with_http_info: #{e}"
 end
 ```
 
@@ -151,11 +152,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **link_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link |  |
+| **create_payment_account_request** | [**CreatePaymentAccountRequest**](CreatePaymentAccountRequest.md) | The details of the payment to create |  |
 
 ### Return type
 
-nil (empty response body)
+[**PaymentAccountCreatedResponse**](PaymentAccountCreatedResponse.md)
 
 ### Authorization
 
@@ -163,17 +164,17 @@ nil (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/problem+json
+- **Content-Type**: application/json
+- **Accept**: application/json, application/problem+json
 
 
-## get_short_link
+## get_payment
 
-> <ShortenedLink> get_short_link(site_slug, link_slug)
+> <PaymentDetails> get_payment(site_slug, payment_identifier, opts)
 
-Get Shortened Link
+Get Payment Details
 
-Gets the details of a shortened link by ID
+Gets the details of a payment by ID
 
 ### Examples
 
@@ -194,34 +195,37 @@ SlipstreamClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SlipstreamClient::LinksApi.new
+api_instance = SlipstreamClient::PaymentsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-link_slug = 'link_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link
+payment_identifier = '44088399-d916-4de5-9f0a-dca7b3d07df2' # String | The unique identifier of the payment
+opts = {
+  include_history: false # Boolean | If true, the response will include the history of the payment
+}
 
 begin
-  # Get Shortened Link
-  result = api_instance.get_short_link(site_slug, link_slug)
+  # Get Payment Details
+  result = api_instance.get_payment(site_slug, payment_identifier, opts)
   p result
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->get_short_link: #{e}"
+  puts "Error when calling PaymentsApi->get_payment: #{e}"
 end
 ```
 
-#### Using the get_short_link_with_http_info variant
+#### Using the get_payment_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ShortenedLink>, Integer, Hash)> get_short_link_with_http_info(site_slug, link_slug)
+> <Array(<PaymentDetails>, Integer, Hash)> get_payment_with_http_info(site_slug, payment_identifier, opts)
 
 ```ruby
 begin
-  # Get Shortened Link
-  data, status_code, headers = api_instance.get_short_link_with_http_info(site_slug, link_slug)
+  # Get Payment Details
+  data, status_code, headers = api_instance.get_payment_with_http_info(site_slug, payment_identifier, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ShortenedLink>
+  p data # => <PaymentDetails>
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->get_short_link_with_http_info: #{e}"
+  puts "Error when calling PaymentsApi->get_payment_with_http_info: #{e}"
 end
 ```
 
@@ -230,11 +234,12 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **link_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a shortened link |  |
+| **payment_identifier** | **String** | The unique identifier of the payment |  |
+| **include_history** | **Boolean** | If true, the response will include the history of the payment | [optional] |
 
 ### Return type
 
-[**ShortenedLink**](ShortenedLink.md)
+[**PaymentDetails**](PaymentDetails.md)
 
 ### Authorization
 
@@ -246,13 +251,13 @@ end
 - **Accept**: application/json, application/problem+json
 
 
-## list_short_links
+## list_payment_accounts
 
-> <ShortenedLinksListResponse> list_short_links(site_slug, opts)
+> <Array<PaymentAccountDetails>> list_payment_accounts(site_slug)
 
-List Shortened Links
+List payment provider accounts
 
-Lists active short links for the site
+List all payment provider accounts for the site
 
 ### Examples
 
@@ -273,39 +278,33 @@ SlipstreamClient.configure do |config|
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SlipstreamClient::LinksApi.new
+api_instance = SlipstreamClient::PaymentsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-opts = {
-  page_size: 50, # Integer | The page number to retrieve
-  next_page_token: 'next_page_token_example', # String | A token retrieved from a previous request, used to retrieve the next page of results
-  is_visited: true, # Boolean | If specified, filters the list to only links that are visited or unvisited. Omit to include all links
-  has_click_tracking: true # Boolean | If specified, filters the list to only links that count clicks or don't count clicks. Omit to include all links
-}
 
 begin
-  # List Shortened Links
-  result = api_instance.list_short_links(site_slug, opts)
+  # List payment provider accounts
+  result = api_instance.list_payment_accounts(site_slug)
   p result
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->list_short_links: #{e}"
+  puts "Error when calling PaymentsApi->list_payment_accounts: #{e}"
 end
 ```
 
-#### Using the list_short_links_with_http_info variant
+#### Using the list_payment_accounts_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ShortenedLinksListResponse>, Integer, Hash)> list_short_links_with_http_info(site_slug, opts)
+> <Array(<Array<PaymentAccountDetails>>, Integer, Hash)> list_payment_accounts_with_http_info(site_slug)
 
 ```ruby
 begin
-  # List Shortened Links
-  data, status_code, headers = api_instance.list_short_links_with_http_info(site_slug, opts)
+  # List payment provider accounts
+  data, status_code, headers = api_instance.list_payment_accounts_with_http_info(site_slug)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ShortenedLinksListResponse>
+  p data # => <Array<PaymentAccountDetails>>
 rescue SlipstreamClient::ApiError => e
-  puts "Error when calling LinksApi->list_short_links_with_http_info: #{e}"
+  puts "Error when calling PaymentsApi->list_payment_accounts_with_http_info: #{e}"
 end
 ```
 
@@ -314,14 +313,10 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **page_size** | **Integer** | The page number to retrieve | [optional] |
-| **next_page_token** | **String** | A token retrieved from a previous request, used to retrieve the next page of results | [optional] |
-| **is_visited** | **Boolean** | If specified, filters the list to only links that are visited or unvisited. Omit to include all links | [optional] |
-| **has_click_tracking** | **Boolean** | If specified, filters the list to only links that count clicks or don&#39;t count clicks. Omit to include all links | [optional] |
 
 ### Return type
 
-[**ShortenedLinksListResponse**](ShortenedLinksListResponse.md)
+[**Array&lt;PaymentAccountDetails&gt;**](PaymentAccountDetails.md)
 
 ### Authorization
 

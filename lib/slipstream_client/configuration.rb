@@ -149,7 +149,7 @@ module SlipstreamClient
 
     def initialize
       @scheme = 'https'
-      @host = 'dev.slipstream.hsone.app'
+      @host = 'slipstream.hsone.app'
       @base_path = '/api/v1'
       @server_index = nil
       @server_operation_index = {}
@@ -245,6 +245,13 @@ module SlipstreamClient
             key: 'Authorization',
             value: "Bearer #{access_token_with_refresh}"
           },
+        'azure_auth' =>
+          {
+            type: 'oauth2',
+            in: 'header',
+            key: 'Authorization',
+            value: "Bearer #{access_token_with_refresh}"
+          },
         'api_key' =>
           {
             type: 'api_key',
@@ -259,7 +266,7 @@ module SlipstreamClient
     def server_settings
       [
         {
-          url: "https://dev.slipstream.hsone.app/api/v1",
+          url: "https://slipstream.hsone.app/api/v1",
           description: "No description provided",
         },
         {

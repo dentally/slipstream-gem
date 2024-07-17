@@ -74,7 +74,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.add_practice_site_capability",
@@ -142,7 +142,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.get_practice_site_details",
@@ -210,7 +210,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'Array<Capability>'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.list_practice_site_capabilities",
@@ -284,7 +284,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'Boolean'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.practice_site_has_capability",
@@ -358,7 +358,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.remove_practice_site_capability",
@@ -437,7 +437,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteIdentity'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SiteDetailsApi.update_practice_site",
@@ -452,85 +452,6 @@ module SlipstreamClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SiteDetailsApi#update_practice_site\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Replace capabilities
-    # Replaces the list of functionality that a practice site (and the software it is using) supports. See [Capabilities](#section/Getting-started/Capabilities) for more details.
-    # @param site_slug [String] The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-    # @param capability [Array<Capability>] The capabilities supported by the practice site
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def update_practice_site_capabilities(site_slug, capability, opts = {})
-      update_practice_site_capabilities_with_http_info(site_slug, capability, opts)
-      nil
-    end
-
-    # Replace capabilities
-    # Replaces the list of functionality that a practice site (and the software it is using) supports. See [Capabilities](#section/Getting-started/Capabilities) for more details.
-    # @param site_slug [String] The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-    # @param capability [Array<Capability>] The capabilities supported by the practice site
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def update_practice_site_capabilities_with_http_info(site_slug, capability, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SiteDetailsApi.update_practice_site_capabilities ...'
-      end
-      # verify the required parameter 'site_slug' is set
-      if @api_client.config.client_side_validation && site_slug.nil?
-        fail ArgumentError, "Missing the required parameter 'site_slug' when calling SiteDetailsApi.update_practice_site_capabilities"
-      end
-      pattern = Regexp.new(/^[osl][a-zA-Z0-9]{3,}$/)
-      if @api_client.config.client_side_validation && site_slug !~ pattern
-        fail ArgumentError, "invalid value for 'site_slug' when calling SiteDetailsApi.update_practice_site_capabilities, must conform to the pattern #{pattern}."
-      end
-
-      # verify the required parameter 'capability' is set
-      if @api_client.config.client_side_validation && capability.nil?
-        fail ArgumentError, "Missing the required parameter 'capability' when calling SiteDetailsApi.update_practice_site_capabilities"
-      end
-      # resource path
-      local_var_path = '/sites/{SiteSlug}/capabilities'.sub('{' + 'SiteSlug' + '}', CGI.escape(site_slug.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/problem+json'])
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(capability)
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
-
-      new_options = opts.merge(
-        :operation => :"SiteDetailsApi.update_practice_site_capabilities",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SiteDetailsApi#update_practice_site_capabilities\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

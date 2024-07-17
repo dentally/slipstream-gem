@@ -16,17 +16,17 @@ require 'time'
 module SlipstreamClient
   # Additional properties to control the printing and sending of the letter 
   class LetterProperties
-    # Whether the letter should be printed in color. If omitted, the default is black and white.
-    attr_accessor :color
-
     # Whether the letter should be sent by express delivery. If omitted, the default is standard delivery.
     attr_accessor :express
+
+    # Whether the letter should be single or double sided. If omitted, the default is single sided.
+    attr_accessor :double_sided
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'color' => :'Color',
-        :'express' => :'Express'
+        :'express' => :'Express',
+        :'double_sided' => :'DoubleSided'
       }
     end
 
@@ -38,16 +38,16 @@ module SlipstreamClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'color' => :'Boolean',
-        :'express' => :'Boolean'
+        :'express' => :'Boolean',
+        :'double_sided' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'color',
-        :'express'
+        :'express',
+        :'double_sided'
       ])
     end
 
@@ -66,12 +66,12 @@ module SlipstreamClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'color')
-        self.color = attributes[:'color']
-      end
-
       if attributes.key?(:'express')
         self.express = attributes[:'express']
+      end
+
+      if attributes.key?(:'double_sided')
+        self.double_sided = attributes[:'double_sided']
       end
     end
 
@@ -95,8 +95,8 @@ module SlipstreamClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          color == o.color &&
-          express == o.express
+          express == o.express &&
+          double_sided == o.double_sided
     end
 
     # @see the `==` method
@@ -108,7 +108,7 @@ module SlipstreamClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [color, express].hash
+      [express, double_sided].hash
     end
 
     # Builds the object from hash

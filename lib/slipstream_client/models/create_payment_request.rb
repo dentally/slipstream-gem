@@ -14,22 +14,31 @@ require 'date'
 require 'time'
 
 module SlipstreamClient
-  # The ID of the record in slipstream, and optionally the PMS
-  class RecordIdentity
-    # The GUID of the record in slipstream - will be an empty GUID if the record was not created in slipstream
-    attr_accessor :id
+  # The details of a payment
+  class CreatePaymentRequest
+    # An amount of money in [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#Minor_unit_fractions) minor units for the currency, e.g. 100 cents to charge $1.00 or 100 to charge ¥100 (a zero-decimal currency). The amount value supports up to eight digits, e.g. a value of 99999999 for a USD charge of $999,999.99.
+    attr_accessor :amount
 
-    # The ID of the record in the pms system
-    attr_accessor :pms_specific_id
+    # The [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes) currency code used by the practice.
+    attr_accessor :currency
 
-    attr_accessor :problem_details
+    # A unique identifier for the customer
+    attr_accessor :customer_id
+
+    # A description of the payment for the customer
+    attr_accessor :description
+
+    # The fee amount (if any) that will be applied to the payment. The amount collected will be capped at the total payment amount.
+    attr_accessor :fee_amount
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'Id',
-        :'pms_specific_id' => :'PmsSpecificId',
-        :'problem_details' => :'ProblemDetails'
+        :'amount' => :'Amount',
+        :'currency' => :'Currency',
+        :'customer_id' => :'CustomerId',
+        :'description' => :'Description',
+        :'fee_amount' => :'FeeAmount'
       }
     end
 
@@ -41,16 +50,17 @@ module SlipstreamClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'pms_specific_id' => :'String',
-        :'problem_details' => :'ProblemDetails'
+        :'amount' => :'Integer',
+        :'currency' => :'String',
+        :'customer_id' => :'String',
+        :'description' => :'String',
+        :'fee_amount' => :'Integer'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'id',
       ])
     end
 
@@ -58,29 +68,39 @@ module SlipstreamClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SlipstreamClient::RecordIdentity` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SlipstreamClient::CreatePaymentRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SlipstreamClient::RecordIdentity`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SlipstreamClient::CreatePaymentRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'pms_specific_id')
-        self.pms_specific_id = attributes[:'pms_specific_id']
+      if attributes.key?(:'amount')
+        self.amount = attributes[:'amount']
       else
-        self.pms_specific_id = nil
+        self.amount = nil
       end
 
-      if attributes.key?(:'problem_details')
-        self.problem_details = attributes[:'problem_details']
+      if attributes.key?(:'currency')
+        self.currency = attributes[:'currency']
+      else
+        self.currency = nil
+      end
+
+      if attributes.key?(:'customer_id')
+        self.customer_id = attributes[:'customer_id']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'fee_amount')
+        self.fee_amount = attributes[:'fee_amount']
       end
     end
 
@@ -89,8 +109,12 @@ module SlipstreamClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @pms_specific_id.nil?
-        invalid_properties.push('invalid value for "pms_specific_id", pms_specific_id cannot be nil.')
+      if @amount.nil?
+        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      end
+
+      if @currency.nil?
+        invalid_properties.push('invalid value for "currency", currency cannot be nil.')
       end
 
       invalid_properties
@@ -100,7 +124,8 @@ module SlipstreamClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pms_specific_id.nil?
+      return false if @amount.nil?
+      return false if @currency.nil?
       true
     end
 
@@ -109,9 +134,11 @@ module SlipstreamClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          pms_specific_id == o.pms_specific_id &&
-          problem_details == o.problem_details
+          amount == o.amount &&
+          currency == o.currency &&
+          customer_id == o.customer_id &&
+          description == o.description &&
+          fee_amount == o.fee_amount
     end
 
     # @see the `==` method
@@ -123,7 +150,7 @@ module SlipstreamClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, pms_specific_id, problem_details].hash
+      [amount, currency, customer_id, description, fee_amount].hash
     end
 
     # Builds the object from hash

@@ -14,22 +14,18 @@ require 'date'
 require 'time'
 
 module SlipstreamClient
-  # The ID of the record in slipstream, and optionally the PMS
-  class RecordIdentity
-    # The GUID of the record in slipstream - will be an empty GUID if the record was not created in slipstream
-    attr_accessor :id
+  class PaymentAccountCreatedResponseOnboardingSession
+    # A session token for embeded onboarding
+    attr_accessor :session
 
-    # The ID of the record in the pms system
-    attr_accessor :pms_specific_id
-
-    attr_accessor :problem_details
+    # When the link expires in ISO8601 format
+    attr_accessor :expires_at
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'Id',
-        :'pms_specific_id' => :'PmsSpecificId',
-        :'problem_details' => :'ProblemDetails'
+        :'session' => :'session',
+        :'expires_at' => :'expiresAt'
       }
     end
 
@@ -41,16 +37,14 @@ module SlipstreamClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'pms_specific_id' => :'String',
-        :'problem_details' => :'ProblemDetails'
+        :'session' => :'String',
+        :'expires_at' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'id',
       ])
     end
 
@@ -58,29 +52,23 @@ module SlipstreamClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `SlipstreamClient::RecordIdentity` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `SlipstreamClient::PaymentAccountCreatedResponseOnboardingSession` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `SlipstreamClient::RecordIdentity`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `SlipstreamClient::PaymentAccountCreatedResponseOnboardingSession`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'session')
+        self.session = attributes[:'session']
       end
 
-      if attributes.key?(:'pms_specific_id')
-        self.pms_specific_id = attributes[:'pms_specific_id']
-      else
-        self.pms_specific_id = nil
-      end
-
-      if attributes.key?(:'problem_details')
-        self.problem_details = attributes[:'problem_details']
+      if attributes.key?(:'expires_at')
+        self.expires_at = attributes[:'expires_at']
       end
     end
 
@@ -89,10 +77,6 @@ module SlipstreamClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @pms_specific_id.nil?
-        invalid_properties.push('invalid value for "pms_specific_id", pms_specific_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -100,7 +84,6 @@ module SlipstreamClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @pms_specific_id.nil?
       true
     end
 
@@ -109,9 +92,8 @@ module SlipstreamClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          pms_specific_id == o.pms_specific_id &&
-          problem_details == o.problem_details
+          session == o.session &&
+          expires_at == o.expires_at
     end
 
     # @see the `==` method
@@ -123,7 +105,7 @@ module SlipstreamClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, pms_specific_id, problem_details].hash
+      [session, expires_at].hash
     end
 
     # Builds the object from hash

@@ -1,6 +1,6 @@
 # SlipstreamClient::SiteDetailsApi
 
-All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -10,7 +10,6 @@ All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
 | [**practice_site_has_capability**](SiteDetailsApi.md#practice_site_has_capability) | **GET** /sites/{SiteSlug}/capabilities/{capability} | Check capability |
 | [**remove_practice_site_capability**](SiteDetailsApi.md#remove_practice_site_capability) | **DELETE** /sites/{SiteSlug}/capabilities/{capability} | Remove capability |
 | [**update_practice_site**](SiteDetailsApi.md#update_practice_site) | **PATCH** /sites/{SiteSlug} | Update practice site details |
-| [**update_practice_site_capabilities**](SiteDetailsApi.md#update_practice_site_capabilities) | **PUT** /sites/{SiteSlug}/capabilities | Replace capabilities |
 
 
 ## add_practice_site_capability
@@ -32,6 +31,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -80,7 +82,7 @@ nil (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -107,6 +109,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -154,7 +159,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -181,6 +186,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -228,7 +236,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -255,6 +263,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -304,7 +315,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -331,6 +342,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -379,7 +393,7 @@ nil (empty response body)
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -406,6 +420,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -455,85 +472,10 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: application/json, application/problem+json
-
-
-## update_practice_site_capabilities
-
-> update_practice_site_capabilities(site_slug, capability)
-
-Replace capabilities
-
-Replaces the list of functionality that a practice site (and the software it is using) supports. See [Capabilities](#section/Getting-started/Capabilities) for more details.
-
-### Examples
-
-```ruby
-require 'time'
-require 'slipstream_client'
-# setup authorization
-SlipstreamClient.configure do |config|
-  # Configure API key authorization: api_key
-  config.api_key['api_key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['api_key'] = 'Bearer'
-
-  # Configure OAuth2 access token for authorization: azure_auth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SlipstreamClient::SiteDetailsApi.new
-site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-capability = [SlipstreamClient::Capability::BILLING] # Array<Capability> | The capabilities supported by the practice site
-
-begin
-  # Replace capabilities
-  api_instance.update_practice_site_capabilities(site_slug, capability)
-rescue SlipstreamClient::ApiError => e
-  puts "Error when calling SiteDetailsApi->update_practice_site_capabilities: #{e}"
-end
-```
-
-#### Using the update_practice_site_capabilities_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> update_practice_site_capabilities_with_http_info(site_slug, capability)
-
-```ruby
-begin
-  # Replace capabilities
-  data, status_code, headers = api_instance.update_practice_site_capabilities_with_http_info(site_slug, capability)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue SlipstreamClient::ApiError => e
-  puts "Error when calling SiteDetailsApi->update_practice_site_capabilities_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **capability** | [**Array&lt;Capability&gt;**](Capability.md) | The capabilities supported by the practice site |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/problem+json
 

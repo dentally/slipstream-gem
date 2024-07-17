@@ -17,7 +17,7 @@ require 'slipstream_client'
 instance = SlipstreamClient::ShortenLinkRequest.new(
   full_link: https://www.google.com?q&#x3D;sqids,
   click_tracking_enabled: false,
-  sliding_expiration: 90.00:00:00,
+  sliding_expiration: P90D,
   _alias: null
 )
 ```

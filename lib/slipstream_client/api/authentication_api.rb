@@ -143,7 +143,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'AccessTokenDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"AuthenticationApi.inspect_access_token",

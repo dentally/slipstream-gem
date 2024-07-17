@@ -66,7 +66,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteDeleted'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SitesApi.delete_site",
@@ -132,7 +132,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteIdentityWithKeys'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SitesApi.get_practice_site_identity_with_keys",
@@ -221,7 +221,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteListResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SitesApi.list_practice_sites",
@@ -298,7 +298,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'PracticeSiteIdentityWithKeys'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['azure_auth']
+      auth_names = opts[:debug_auth_names] || ['azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"SitesApi.onboard_site",

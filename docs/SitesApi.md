@@ -1,6 +1,6 @@
 # SlipstreamClient::SitesApi
 
-All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -25,6 +25,9 @@ require 'time'
 require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
+
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
@@ -75,7 +78,7 @@ end
 
 ### Authorization
 
-[azure_auth](../README.md#azure_auth)
+[azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -98,6 +101,9 @@ require 'time'
 require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
+
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
@@ -148,7 +154,7 @@ end
 
 ### Authorization
 
-[azure_auth](../README.md#azure_auth)
+[azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -171,6 +177,9 @@ require 'time'
 require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
+
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
@@ -233,7 +242,7 @@ end
 
 ### Authorization
 
-[azure_auth](../README.md#azure_auth)
+[azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -256,6 +265,9 @@ require 'time'
 require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
+
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
@@ -308,7 +320,7 @@ end
 
 ### Authorization
 
-[azure_auth](../README.md#azure_auth)
+[azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # SlipstreamClient::AuthenticationApi
 
-All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -91,6 +91,9 @@ require 'slipstream_client'
 SlipstreamClient.configure do |config|
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 end
 
 api_instance = SlipstreamClient::AuthenticationApi.new
@@ -132,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[azure_auth](../README.md#azure_auth)
+[azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 

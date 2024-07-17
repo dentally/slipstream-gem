@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** | The GUID of the record in slipstream | [optional] |
+| **id** | **String** | The GUID of the record in slipstream - will be an empty GUID if the record was not created in slipstream | [optional] |
 | **pms_specific_id** | **String** | The ID of the record in the pms system |  |
 | **problem_details** | [**ProblemDetails**](ProblemDetails.md) |  | [optional] |
 

@@ -1,6 +1,6 @@
 # SlipstreamClient::PhysicalPostWebhooksApi
 
-All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -28,6 +28,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -75,7 +78,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -102,6 +105,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -151,7 +157,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
@@ -178,6 +184,9 @@ SlipstreamClient.configure do |config|
   config.api_key['api_key'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   # config.api_key_prefix['api_key'] = 'Bearer'
+
+  # Configure OAuth2 access token for authorization: azure_auth
+  config.access_token = 'YOUR ACCESS TOKEN'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -225,7 +234,7 @@ end
 
 ### Authorization
 
-[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth)
+[api_key](../README.md#api_key), [azure_auth](../README.md#azure_auth), [azure_auth](../README.md#azure_auth)
 
 ### HTTP request headers
 
