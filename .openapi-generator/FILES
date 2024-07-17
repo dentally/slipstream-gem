@@ -157,15 +157,4 @@ lib/slipstream_client/models/webhook_subscription_details.rb
 lib/slipstream_client/models/webhook_subscription_headers_inner.rb
 lib/slipstream_client/version.rb
 slipstream_client.gemspec
-spec/api/payments_api_spec.rb
-spec/models/create_payment_account_request_spec.rb
-spec/models/create_payment_request_spec.rb
-spec/models/payment_account_created_response_onboarding_link_spec.rb
-spec/models/payment_account_created_response_onboarding_session_spec.rb
-spec/models/payment_account_created_response_spec.rb
-spec/models/payment_account_details_spec.rb
-spec/models/payment_account_status_spec.rb
-spec/models/payment_change_summary_spec.rb
-spec/models/payment_details_spec.rb
-spec/models/payment_provider_spec.rb
 spec/spec_helper.rb
