@@ -79,7 +79,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'ShortLinksCreatedResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"LinksApi.create_short_links",
@@ -158,7 +158,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type]
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"LinksApi.delete_short_link",
@@ -237,7 +237,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'ShortenedLink'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"LinksApi.get_short_link",
@@ -325,7 +325,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'ShortenedLinksListResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"LinksApi.list_short_links",

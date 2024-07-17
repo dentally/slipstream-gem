@@ -75,7 +75,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://dev.slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -93,6 +93,10 @@ Class | Method | HTTP request | Description
 *SlipstreamClient::OrganisationsApi* | [**get_organisation_identity**](docs/OrganisationsApi.md#get_organisation_identity) | **GET** /management/organisations/{OrganisationIdentifier}/identity | Get organisation identity
 *SlipstreamClient::OrganisationsApi* | [**list_billing_items**](docs/OrganisationsApi.md#list_billing_items) | **GET** /management/organisations/{OrganisationSlug}/billing | Get a list of billing item's for an organisation
 *SlipstreamClient::OrganisationsApi* | [**onboard_organisation**](docs/OrganisationsApi.md#onboard_organisation) | **POST** /management/organisations/{OrganisationIdentifier} | Upsert organisation
+*SlipstreamClient::PaymentsApi* | [**create_payment**](docs/PaymentsApi.md#create_payment) | **POST** /sites/{SiteSlug}/payments | Create a payment
+*SlipstreamClient::PaymentsApi* | [**create_payment_account**](docs/PaymentsApi.md#create_payment_account) | **POST** /sites/{SiteSlug}/payments/accounts | Create account with payment provider
+*SlipstreamClient::PaymentsApi* | [**get_payment**](docs/PaymentsApi.md#get_payment) | **GET** /sites/{SiteSlug}/payments/{PaymentIdentifier} | Get Payment Details
+*SlipstreamClient::PaymentsApi* | [**list_payment_accounts**](docs/PaymentsApi.md#list_payment_accounts) | **GET** /sites/{SiteSlug}/payments/accounts | List payment provider accounts
 *SlipstreamClient::PhysicalPostApi* | [**create_letters**](docs/PhysicalPostApi.md#create_letters) | **POST** /sites/{SiteSlug}/physicalpost/letter | Send letters
 *SlipstreamClient::PhysicalPostApi* | [**get_letter**](docs/PhysicalPostApi.md#get_letter) | **GET** /sites/{SiteSlug}/physicalpost/letter/{LetterId} | Get the letter details of a specific letter
 *SlipstreamClient::PhysicalPostApi* | [**list_letters**](docs/PhysicalPostApi.md#list_letters) | **GET** /sites/{SiteSlug}/physicalpost/letter | Get a paginated list of all letter details owned by a site
@@ -105,7 +109,6 @@ Class | Method | HTTP request | Description
 *SlipstreamClient::SiteDetailsApi* | [**practice_site_has_capability**](docs/SiteDetailsApi.md#practice_site_has_capability) | **GET** /sites/{SiteSlug}/capabilities/{capability} | Check capability
 *SlipstreamClient::SiteDetailsApi* | [**remove_practice_site_capability**](docs/SiteDetailsApi.md#remove_practice_site_capability) | **DELETE** /sites/{SiteSlug}/capabilities/{capability} | Remove capability
 *SlipstreamClient::SiteDetailsApi* | [**update_practice_site**](docs/SiteDetailsApi.md#update_practice_site) | **PATCH** /sites/{SiteSlug} | Update practice site details
-*SlipstreamClient::SiteDetailsApi* | [**update_practice_site_capabilities**](docs/SiteDetailsApi.md#update_practice_site_capabilities) | **PUT** /sites/{SiteSlug}/capabilities | Replace capabilities
 *SlipstreamClient::SitesApi* | [**delete_site**](docs/SitesApi.md#delete_site) | **DELETE** /management/sites/{SiteIdentifier} | Delete a practice site
 *SlipstreamClient::SitesApi* | [**get_practice_site_identity_with_keys**](docs/SitesApi.md#get_practice_site_identity_with_keys) | **GET** /management/sites/{SiteIdentifier}/identity | Get practice identity
 *SlipstreamClient::SitesApi* | [**list_practice_sites**](docs/SitesApi.md#list_practice_sites) | **GET** /sites | List Practice Sites
@@ -127,6 +130,8 @@ Class | Method | HTTP request | Description
  - [SlipstreamClient::CloudEvent](docs/CloudEvent.md)
  - [SlipstreamClient::Coordinates](docs/Coordinates.md)
  - [SlipstreamClient::CreateLetters202Response](docs/CreateLetters202Response.md)
+ - [SlipstreamClient::CreatePaymentAccountRequest](docs/CreatePaymentAccountRequest.md)
+ - [SlipstreamClient::CreatePaymentRequest](docs/CreatePaymentRequest.md)
  - [SlipstreamClient::DataUri](docs/DataUri.md)
  - [SlipstreamClient::Forbidden](docs/Forbidden.md)
  - [SlipstreamClient::LetterChangeSummary](docs/LetterChangeSummary.md)
@@ -141,6 +146,14 @@ Class | Method | HTTP request | Description
  - [SlipstreamClient::OrganisationIdentity](docs/OrganisationIdentity.md)
  - [SlipstreamClient::OrganisationOnboardingRequest](docs/OrganisationOnboardingRequest.md)
  - [SlipstreamClient::PagedResponse](docs/PagedResponse.md)
+ - [SlipstreamClient::PaymentAccountCreatedResponse](docs/PaymentAccountCreatedResponse.md)
+ - [SlipstreamClient::PaymentAccountCreatedResponseOnboardingLink](docs/PaymentAccountCreatedResponseOnboardingLink.md)
+ - [SlipstreamClient::PaymentAccountCreatedResponseOnboardingSession](docs/PaymentAccountCreatedResponseOnboardingSession.md)
+ - [SlipstreamClient::PaymentAccountDetails](docs/PaymentAccountDetails.md)
+ - [SlipstreamClient::PaymentAccountStatus](docs/PaymentAccountStatus.md)
+ - [SlipstreamClient::PaymentChangeSummary](docs/PaymentChangeSummary.md)
+ - [SlipstreamClient::PaymentDetails](docs/PaymentDetails.md)
+ - [SlipstreamClient::PaymentProvider](docs/PaymentProvider.md)
  - [SlipstreamClient::PhysicalPostEvent](docs/PhysicalPostEvent.md)
  - [SlipstreamClient::PracticeEntity](docs/PracticeEntity.md)
  - [SlipstreamClient::PracticeEntityType](docs/PracticeEntityType.md)
@@ -173,6 +186,14 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
+### azure_auth
+
+
+- **Type**: OAuth
+- **Flow**: implicit
+- **Authorization URL**: /oauth2/authorize
+- **Scopes**: N/A
+
 ### azure_auth
 
 

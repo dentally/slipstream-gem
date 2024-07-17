@@ -14,13 +14,11 @@ require 'date'
 require 'time'
 
 module SlipstreamClient
-  class Capability
-    BILLING = "Billing".freeze
-    PHYSICAL_POST = "PhysicalPost".freeze
-    ONLINE_BOOKING = "OnlineBooking".freeze
+  class PaymentProvider
+    STRIPE = "Stripe".freeze
 
     def self.all_vars
-      @all_vars ||= [BILLING, PHYSICAL_POST, ONLINE_BOOKING].freeze
+      @all_vars ||= [STRIPE].freeze
     end
 
     # Builds the enum from string
@@ -34,8 +32,8 @@ module SlipstreamClient
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      return value if Capability.all_vars.include?(value)
-      raise "Invalid ENUM value #{value} for class #Capability"
+      return value if PaymentProvider.all_vars.include?(value)
+      raise "Invalid ENUM value #{value} for class #PaymentProvider"
     end
   end
 end

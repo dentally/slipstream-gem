@@ -79,7 +79,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'CreateLetters202Response'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostApi.create_letters",
@@ -156,7 +156,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'LetterDetails'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostApi.get_letter",
@@ -247,7 +247,7 @@ module SlipstreamClient
       return_type = opts[:debug_return_type] || 'LetterDetailsListResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth']
+      auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']
 
       new_options = opts.merge(
         :operation => :"PhysicalPostApi.list_letters",
