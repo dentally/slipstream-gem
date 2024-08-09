@@ -251,13 +251,6 @@ module SlipstreamClient
             key: 'Authorization',
             value: "Bearer #{access_token_with_refresh}"
           },
-        'azure_auth' =>
-          {
-            type: 'oauth2',
-            in: 'header',
-            key: 'Authorization',
-            value: "Bearer #{access_token_with_refresh}"
-          },
         'api_key' =>
           {
             type: 'api_key',
