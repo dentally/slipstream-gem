@@ -1,0 +1,18 @@
+diff --git a/lib/slipstream_client/configuration.rb b/lib/slipstream_client/configuration.rb
+index 0478622..94064ba 100644
+--- a/lib/slipstream_client/configuration.rb
++++ b/lib/slipstream_client/configuration.rb
+@@ -244,13 +244,6 @@ module SlipstreamClient
+     # Returns Auth Settings hash for api client.
+     def auth_settings
+       {
+-        'azure_auth' =>
+-          {
+-            type: 'oauth2',
+-            in: 'header',
+-            key: 'Authorization',
+-            value: "Bearer #{access_token_with_refresh}"
+-          },
+         'azure_auth' =>
+           {
+             type: 'oauth2',

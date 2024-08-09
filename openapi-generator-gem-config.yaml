@@ -3,9 +3,5 @@ library: typhoeus
 gem_description: |
   ### This gem is auto generated via [openapi-generator](https://github.com/OpenAPITools/openapi-generator) from the slipstream open api spec as follows
 
-  # To build
-  `openapi-generator generate -i https://dev.slipstream.hsone.app/swagger/v1/swagger.json -g ruby -c openapi-generator-gem-config.yaml -o . --git-repo-id slipstream-gem --git-user-id dentally`
-
-  increment version number in lib/slipstream_client/version.rb
-  # Then rebuild after bumping the gem version where appropriate
-  gem build slipstream_client.gemspec
+  # To build run
+  ./build.sh
