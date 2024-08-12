@@ -1,0 +1,15 @@
+diff a/lib/slipstream_client/configuration.rb b/lib/slipstream_client/configuration.rb	(rejected hunks)
+@@ -234,13 +234,6 @@ def basic_auth_token
+     # Returns Auth Settings hash for api client.
+     def auth_settings
+       {
+-        'azure_auth' =>
+-          {
+-            type: 'oauth2',
+-            in: 'header',
+-            key: 'Authorization',
+-            value: "Bearer #{access_token_with_refresh}"
+-          },
+         'azure_auth' =>
+           {
+             type: 'oauth2',auth_settings
