@@ -170,17 +170,17 @@ module SlipstreamClient
     # Unsubscribe from receiving webhooks for physical post events
     # @param site_slug [String] The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
     # @param [Hash] opts the optional parameters
-    # @return [WebhookSubscription]
+    # @return [nil]
     def unsubscribe_to_physical_post(site_slug, opts = {})
-      data, _status_code, _headers = unsubscribe_to_physical_post_with_http_info(site_slug, opts)
-      data
+      unsubscribe_to_physical_post_with_http_info(site_slug, opts)
+      nil
     end
 
     # Unsubscribe
     # Unsubscribe from receiving webhooks for physical post events
     # @param site_slug [String] The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
     # @param [Hash] opts the optional parameters
-    # @return [Array<(WebhookSubscription, Integer, Hash)>] WebhookSubscription data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def unsubscribe_to_physical_post_with_http_info(site_slug, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PhysicalPostWebhooksApi.unsubscribe_to_physical_post ...'
@@ -203,7 +203,7 @@ module SlipstreamClient
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/problem+json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/problem+json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -212,7 +212,7 @@ module SlipstreamClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'WebhookSubscription'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['api_key', 'azure_auth', 'azure_auth']

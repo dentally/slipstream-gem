@@ -62,7 +62,7 @@ describe 'PhysicalPostWebhooksApi' do
   # Unsubscribe from receiving webhooks for physical post events
   # @param site_slug The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
   # @param [Hash] opts the optional parameters
-  # @return [WebhookSubscription]
+  # @return [nil]
   describe 'unsubscribe_to_physical_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

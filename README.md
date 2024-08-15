@@ -81,6 +81,20 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SlipstreamClient::AuthenticationApi* | [**get_access_token**](docs/AuthenticationApi.md#get_access_token) | **POST** /oauth2/token | Get an access token
 *SlipstreamClient::AuthenticationApi* | [**inspect_access_token**](docs/AuthenticationApi.md#inspect_access_token) | **GET** /oauth2/introspect | Gets the details of the current access token.
+*SlipstreamClient::FormsApi* | [**add_form_to_group**](docs/FormsApi.md#add_form_to_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms | Add forms to a form group, or reset them if they already exists (allowing it to be refilled)
+*SlipstreamClient::FormsApi* | [**create_form_group**](docs/FormsApi.md#create_form_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups | Create a form group for a user
+*SlipstreamClient::FormsApi* | [**create_user_and_forms**](docs/FormsApi.md#create_user_and_forms) | **POST** /sites/{SiteSlug}/forms | Create a user with forms
+*SlipstreamClient::FormsApi* | [**delete_form**](docs/FormsApi.md#delete_form) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms/{FormSlug} | Delete a form
+*SlipstreamClient::FormsApi* | [**delete_form_group**](docs/FormsApi.md#delete_form_group) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug} | Delete a form group
+*SlipstreamClient::FormsApi* | [**delete_user_and_forms**](docs/FormsApi.md#delete_user_and_forms) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Delete a form user record
+*SlipstreamClient::FormsApi* | [**get_form_group**](docs/FormsApi.md#get_form_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug} | Get a form group
+*SlipstreamClient::FormsApi* | [**get_form_user**](docs/FormsApi.md#get_form_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Get patient details
+*SlipstreamClient::FormsApi* | [**get_group_form_details**](docs/FormsApi.md#get_group_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms/{FormSlug} | Get form details
+*SlipstreamClient::FormsApi* | [**get_user_form_details**](docs/FormsApi.md#get_user_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/forms/{FormTypeOrId} | Get form details
+*SlipstreamClient::FormsApi* | [**list_form_groups_for_user**](docs/FormsApi.md#list_form_groups_for_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups | List form groups for a user
+*SlipstreamClient::FormsApi* | [**list_form_users**](docs/FormsApi.md#list_form_users) | **GET** /sites/{SiteSlug}/forms/users | List Form Users
+*SlipstreamClient::FormsApi* | [**list_forms_in_group**](docs/FormsApi.md#list_forms_in_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms | List forms for a form group
+*SlipstreamClient::FormsApi* | [**update_form_user**](docs/FormsApi.md#update_form_user) | **PATCH** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Update a form user
 *SlipstreamClient::LinksApi* | [**create_short_links**](docs/LinksApi.md#create_short_links) | **POST** /sites/{SiteSlug}/links | Create short links
 *SlipstreamClient::LinksApi* | [**delete_short_link**](docs/LinksApi.md#delete_short_link) | **DELETE** /sites/{SiteSlug}/links/{LinkSlug} | Delete Shortened Link
 *SlipstreamClient::LinksApi* | [**get_short_link**](docs/LinksApi.md#get_short_link) | **GET** /sites/{SiteSlug}/links/{LinkSlug} | Get Shortened Link
@@ -134,12 +148,32 @@ Class | Method | HTTP request | Description
  - [SlipstreamClient::Capability](docs/Capability.md)
  - [SlipstreamClient::CloudEvent](docs/CloudEvent.md)
  - [SlipstreamClient::Coordinates](docs/Coordinates.md)
+ - [SlipstreamClient::CreateFormGroupRequest](docs/CreateFormGroupRequest.md)
+ - [SlipstreamClient::CreateFormsRequest](docs/CreateFormsRequest.md)
  - [SlipstreamClient::CreateLetters202Response](docs/CreateLetters202Response.md)
  - [SlipstreamClient::CreatePaymentAccountRequest](docs/CreatePaymentAccountRequest.md)
  - [SlipstreamClient::CreatePaymentRequest](docs/CreatePaymentRequest.md)
+ - [SlipstreamClient::CreateUserWithFormsRequest](docs/CreateUserWithFormsRequest.md)
  - [SlipstreamClient::DataUri](docs/DataUri.md)
  - [SlipstreamClient::FailedDependency](docs/FailedDependency.md)
  - [SlipstreamClient::Forbidden](docs/Forbidden.md)
+ - [SlipstreamClient::Form](docs/Form.md)
+ - [SlipstreamClient::FormDetailsListResponse](docs/FormDetailsListResponse.md)
+ - [SlipstreamClient::FormDetailsResponse](docs/FormDetailsResponse.md)
+ - [SlipstreamClient::FormGroup](docs/FormGroup.md)
+ - [SlipstreamClient::FormGroupDetailsListResponse](docs/FormGroupDetailsListResponse.md)
+ - [SlipstreamClient::FormGroupDetailsResponse](docs/FormGroupDetailsResponse.md)
+ - [SlipstreamClient::FormGroupRequest](docs/FormGroupRequest.md)
+ - [SlipstreamClient::FormGroupWithForms](docs/FormGroupWithForms.md)
+ - [SlipstreamClient::FormGroupWithFormsRequest](docs/FormGroupWithFormsRequest.md)
+ - [SlipstreamClient::FormRequest](docs/FormRequest.md)
+ - [SlipstreamClient::FormType](docs/FormType.md)
+ - [SlipstreamClient::FormUser](docs/FormUser.md)
+ - [SlipstreamClient::FormUserDetailsListResponse](docs/FormUserDetailsListResponse.md)
+ - [SlipstreamClient::FormUserDetailsResponse](docs/FormUserDetailsResponse.md)
+ - [SlipstreamClient::FormUserRequest](docs/FormUserRequest.md)
+ - [SlipstreamClient::FormUserWithFormGroups](docs/FormUserWithFormGroups.md)
+ - [SlipstreamClient::FormUserWithFormGroupsAndForms](docs/FormUserWithFormGroupsAndForms.md)
  - [SlipstreamClient::LetterChangeSummary](docs/LetterChangeSummary.md)
  - [SlipstreamClient::LetterCreatedEvent](docs/LetterCreatedEvent.md)
  - [SlipstreamClient::LetterCreationFailedEvent](docs/LetterCreationFailedEvent.md)
@@ -190,7 +224,9 @@ Class | Method | HTTP request | Description
  - [SlipstreamClient::StreetAddress](docs/StreetAddress.md)
  - [SlipstreamClient::Unauthorized](docs/Unauthorized.md)
  - [SlipstreamClient::UnprocessableEntity](docs/UnprocessableEntity.md)
+ - [SlipstreamClient::UpdateFormUserRequest](docs/UpdateFormUserRequest.md)
  - [SlipstreamClient::UpdatePracticeSiteDetailsRequest](docs/UpdatePracticeSiteDetailsRequest.md)
+ - [SlipstreamClient::UserWithFormsResponse](docs/UserWithFormsResponse.md)
  - [SlipstreamClient::WebhookSubscription](docs/WebhookSubscription.md)
  - [SlipstreamClient::WebhookSubscriptionDetails](docs/WebhookSubscriptionDetails.md)
  - [SlipstreamClient::WebhookSubscriptionHeadersInner](docs/WebhookSubscriptionHeadersInner.md)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    slipstream_client (1.0.5)
+    slipstream_client (1.0.6)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
