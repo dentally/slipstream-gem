@@ -15,8 +15,8 @@ require 'slipstream_client'
 
 instance = SlipstreamClient::CreatePaymentAccountRequest.new(
   payment_provider: null,
-  return_url: https://myapp.com/payment/account/return,
-  refresh_url: https://myapp.com/payment/account/resume-onboarding
+  return_url: https://example-hsone-vap.com/payment/account/return,
+  refresh_url: https://example-hsone-vap.com/payment/account/resume-onboarding
 )
 ```
 

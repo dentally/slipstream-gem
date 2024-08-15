@@ -167,7 +167,7 @@ end
 
 ## unsubscribe_to_physical_post
 
-> <WebhookSubscription> unsubscribe_to_physical_post(site_slug)
+> unsubscribe_to_physical_post(site_slug)
 
 Unsubscribe
 
@@ -197,8 +197,7 @@ site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.o
 
 begin
   # Unsubscribe
-  result = api_instance.unsubscribe_to_physical_post(site_slug)
-  p result
+  api_instance.unsubscribe_to_physical_post(site_slug)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->unsubscribe_to_physical_post: #{e}"
 end
@@ -206,9 +205,9 @@ end
 
 #### Using the unsubscribe_to_physical_post_with_http_info variant
 
-This returns an Array which contains the response data, status code and headers.
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(<WebhookSubscription>, Integer, Hash)> unsubscribe_to_physical_post_with_http_info(site_slug)
+> <Array(nil, Integer, Hash)> unsubscribe_to_physical_post_with_http_info(site_slug)
 
 ```ruby
 begin
@@ -216,7 +215,7 @@ begin
   data, status_code, headers = api_instance.unsubscribe_to_physical_post_with_http_info(site_slug)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <WebhookSubscription>
+  p data # => nil
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostWebhooksApi->unsubscribe_to_physical_post_with_http_info: #{e}"
 end
@@ -230,7 +229,7 @@ end
 
 ### Return type
 
-[**WebhookSubscription**](WebhookSubscription.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -239,5 +238,5 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/problem+json
+- **Accept**: application/problem+json
 
