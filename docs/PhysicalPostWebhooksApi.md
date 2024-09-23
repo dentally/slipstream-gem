@@ -92,7 +92,7 @@ end
 
 Subscribe
 
-Subscribe to receiving webhooks for physical post events
+Subscribe to receive webhooks for physical post events
 
 ### Examples
 

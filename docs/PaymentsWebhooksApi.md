@@ -92,7 +92,7 @@ end
 
 Subscribe
 
-Subscribe to receiving webhook events for payments
+Subscribe to receive webhook events for payments
 
 ### Examples
 

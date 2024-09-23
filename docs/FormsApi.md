@@ -4,25 +4,25 @@ All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**add_form_to_group**](FormsApi.md#add_form_to_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms | Add forms to a form group, or reset them if they already exists (allowing it to be refilled) |
-| [**create_form_group**](FormsApi.md#create_form_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups | Create a form group for a user |
+| [**add_form_to_group**](FormsApi.md#add_form_to_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug}/forms | Add forms to a form group, or reset them if they already exists (allowing it to be refilled) |
+| [**create_form_group**](FormsApi.md#create_form_group) | **POST** /sites/{SiteSlug}/forms/users/{UserSlug}/groups | Create a form group for a user |
 | [**create_user_and_forms**](FormsApi.md#create_user_and_forms) | **POST** /sites/{SiteSlug}/forms | Create a user with forms |
-| [**delete_form**](FormsApi.md#delete_form) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms/{FormSlug} | Delete a form |
-| [**delete_form_group**](FormsApi.md#delete_form_group) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug} | Delete a form group |
-| [**delete_user_and_forms**](FormsApi.md#delete_user_and_forms) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Delete a form user record |
-| [**get_form_group**](FormsApi.md#get_form_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug} | Get a form group |
-| [**get_form_user**](FormsApi.md#get_form_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Get patient details |
-| [**get_group_form_details**](FormsApi.md#get_group_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms/{FormSlug} | Get form details |
-| [**get_user_form_details**](FormsApi.md#get_user_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/forms/{FormTypeOrId} | Get form details |
-| [**list_form_groups_for_user**](FormsApi.md#list_form_groups_for_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups | List form groups for a user |
+| [**delete_form**](FormsApi.md#delete_form) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug}/forms/{FormSlug} | Delete a form |
+| [**delete_form_group**](FormsApi.md#delete_form_group) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug} | Delete a form group |
+| [**delete_user_and_forms**](FormsApi.md#delete_user_and_forms) | **DELETE** /sites/{SiteSlug}/forms/users/{UserSlug} | Delete a form user record |
+| [**get_form_group**](FormsApi.md#get_form_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug} | Get a form group |
+| [**get_form_user**](FormsApi.md#get_form_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug} | Get patient details |
+| [**get_group_form_details**](FormsApi.md#get_group_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug}/forms/{FormSlug} | Get form details |
+| [**get_user_form_details**](FormsApi.md#get_user_form_details) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug}/forms/{FormTypeOrId} | Get form details |
+| [**list_form_groups_for_user**](FormsApi.md#list_form_groups_for_user) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug}/groups | List form groups for a user |
 | [**list_form_users**](FormsApi.md#list_form_users) | **GET** /sites/{SiteSlug}/forms/users | List Form Users |
-| [**list_forms_in_group**](FormsApi.md#list_forms_in_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlugOrId}/groups/{GroupSlug}/forms | List forms for a form group |
-| [**update_form_user**](FormsApi.md#update_form_user) | **PATCH** /sites/{SiteSlug}/forms/users/{UserSlugOrId} | Update a form user |
+| [**list_forms_in_group**](FormsApi.md#list_forms_in_group) | **GET** /sites/{SiteSlug}/forms/users/{UserSlug}/groups/{GroupSlug}/forms | List forms for a form group |
+| [**update_form_user**](FormsApi.md#update_form_user) | **PATCH** /sites/{SiteSlug}/forms/users/{UserSlug} | Update a form user |
 
 
 ## add_form_to_group
 
-> add_form_to_group(site_slug, user_slug_or_id, group_slug, create_forms_request)
+> add_form_to_group(site_slug, user_slug, group_slug, create_forms_request)
 
 Add forms to a form group, or reset them if they already exists (allowing it to be refilled)
 
@@ -49,13 +49,13 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 create_forms_request = SlipstreamClient::CreateFormsRequest.new({type: SlipstreamClient::FormType::CUSTOM}) # CreateFormsRequest | 
 
 begin
   # Add forms to a form group, or reset them if they already exists (allowing it to be refilled)
-  api_instance.add_form_to_group(site_slug, user_slug_or_id, group_slug, create_forms_request)
+  api_instance.add_form_to_group(site_slug, user_slug, group_slug, create_forms_request)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->add_form_to_group: #{e}"
 end
@@ -65,12 +65,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> add_form_to_group_with_http_info(site_slug, user_slug_or_id, group_slug, create_forms_request)
+> <Array(nil, Integer, Hash)> add_form_to_group_with_http_info(site_slug, user_slug, group_slug, create_forms_request)
 
 ```ruby
 begin
   # Add forms to a form group, or reset them if they already exists (allowing it to be refilled)
-  data, status_code, headers = api_instance.add_form_to_group_with_http_info(site_slug, user_slug_or_id, group_slug, create_forms_request)
+  data, status_code, headers = api_instance.add_form_to_group_with_http_info(site_slug, user_slug, group_slug, create_forms_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -84,7 +84,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 | **create_forms_request** | [**CreateFormsRequest**](CreateFormsRequest.md) |  |  |
 
@@ -104,7 +104,7 @@ nil (empty response body)
 
 ## create_form_group
 
-> <FormGroupDetailsResponse> create_form_group(site_slug, user_slug_or_id, create_form_group_request)
+> <FormGroupDetailsResponse> create_form_group(site_slug, user_slug, create_form_group_request)
 
 Create a form group for a user
 
@@ -131,12 +131,12 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 create_form_group_request = SlipstreamClient::CreateFormGroupRequest.new({form_group: SlipstreamClient::FormGroupWithFormsRequest.new({display_name: 'New patient onboarding'})}) # CreateFormGroupRequest | 
 
 begin
   # Create a form group for a user
-  result = api_instance.create_form_group(site_slug, user_slug_or_id, create_form_group_request)
+  result = api_instance.create_form_group(site_slug, user_slug, create_form_group_request)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->create_form_group: #{e}"
@@ -147,12 +147,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormGroupDetailsResponse>, Integer, Hash)> create_form_group_with_http_info(site_slug, user_slug_or_id, create_form_group_request)
+> <Array(<FormGroupDetailsResponse>, Integer, Hash)> create_form_group_with_http_info(site_slug, user_slug, create_form_group_request)
 
 ```ruby
 begin
   # Create a form group for a user
-  data, status_code, headers = api_instance.create_form_group_with_http_info(site_slug, user_slug_or_id, create_form_group_request)
+  data, status_code, headers = api_instance.create_form_group_with_http_info(site_slug, user_slug, create_form_group_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormGroupDetailsResponse>
@@ -166,7 +166,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **create_form_group_request** | [**CreateFormGroupRequest**](CreateFormGroupRequest.md) |  |  |
 
 ### Return type
@@ -212,7 +212,7 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-create_user_with_forms_request = SlipstreamClient::CreateUserWithFormsRequest.new({user: SlipstreamClient::FormUserRequest.new({display_name: 'John', last_name: 'Smith'}), form_groups: [{"displayName": "New patient onboarding", "Forms": [{"displayName": "Patient Demographics", "Type": "PatientDetails"}, {"displayName": "Medical History", "Type": "MedicalHistory"}, {"displayName": "Oral Health", "Type": "OralHealth"}]}]}) # CreateUserWithFormsRequest | 
+create_user_with_forms_request = SlipstreamClient::CreateUserWithFormsRequest.new({user: SlipstreamClient::FormUserRequest.new({display_name: 'John Smith', last_name: 'Smith'}), form_groups: [{"displayName": "New patient onboarding", "forms": [{"displayName": "Terms and Conditions", "type": "TermsAndConditions"}, {"displayName": "Patient Demographics", "type": "PatientDetails", "initialState": {"title": "Mr", "firstName": "John", "lastName": "Smith", "sex": "Male", "dateOfBirth": "1990-01-01T00: 00: 00.0000000+00: 00", "occupation": "Software Engineer", "email": "john.smith@example.com", "mobilePhone": "+641234567890", "homePhone": "", "workPhone": "", "addressLine1": "123 Main St", "addressLine2": "", "city": "Auckland", "state": "", "postCode": "1021"}}, {"displayName": "Medical History", "type": "MedicalHistory"}, {"displayName": "Oral Health", "type": "OralHealth"}, {"displayName": "Contact Consent", "type": "ContactConsent"}, {"displayName": "Health Screening", "type": "HealthScreening"}]}]}) # CreateUserWithFormsRequest | 
 
 begin
   # Create a user with forms
@@ -264,7 +264,7 @@ end
 
 ## delete_form
 
-> delete_form(site_slug, user_slug_or_id, group_slug, form_slug)
+> delete_form(site_slug, user_slug, group_slug, form_slug)
 
 Delete a form
 
@@ -291,13 +291,13 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 form_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form
 
 begin
   # Delete a form
-  api_instance.delete_form(site_slug, user_slug_or_id, group_slug, form_slug)
+  api_instance.delete_form(site_slug, user_slug, group_slug, form_slug)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->delete_form: #{e}"
 end
@@ -307,12 +307,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> delete_form_with_http_info(site_slug, user_slug_or_id, group_slug, form_slug)
+> <Array(nil, Integer, Hash)> delete_form_with_http_info(site_slug, user_slug, group_slug, form_slug)
 
 ```ruby
 begin
   # Delete a form
-  data, status_code, headers = api_instance.delete_form_with_http_info(site_slug, user_slug_or_id, group_slug, form_slug)
+  data, status_code, headers = api_instance.delete_form_with_http_info(site_slug, user_slug, group_slug, form_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -326,7 +326,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 | **form_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form |  |
 
@@ -346,7 +346,7 @@ nil (empty response body)
 
 ## delete_form_group
 
-> delete_form_group(site_slug, user_slug_or_id, group_slug)
+> delete_form_group(site_slug, user_slug, group_slug)
 
 Delete a form group
 
@@ -373,12 +373,12 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 
 begin
   # Delete a form group
-  api_instance.delete_form_group(site_slug, user_slug_or_id, group_slug)
+  api_instance.delete_form_group(site_slug, user_slug, group_slug)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->delete_form_group: #{e}"
 end
@@ -388,12 +388,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> delete_form_group_with_http_info(site_slug, user_slug_or_id, group_slug)
+> <Array(nil, Integer, Hash)> delete_form_group_with_http_info(site_slug, user_slug, group_slug)
 
 ```ruby
 begin
   # Delete a form group
-  data, status_code, headers = api_instance.delete_form_group_with_http_info(site_slug, user_slug_or_id, group_slug)
+  data, status_code, headers = api_instance.delete_form_group_with_http_info(site_slug, user_slug, group_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -407,7 +407,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 
 ### Return type
@@ -426,7 +426,7 @@ nil (empty response body)
 
 ## delete_user_and_forms
 
-> delete_user_and_forms(site_slug, user_slug_or_id)
+> delete_user_and_forms(site_slug, user_slug)
 
 Delete a form user record
 
@@ -453,11 +453,11 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 
 begin
   # Delete a form user record
-  api_instance.delete_user_and_forms(site_slug, user_slug_or_id)
+  api_instance.delete_user_and_forms(site_slug, user_slug)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->delete_user_and_forms: #{e}"
 end
@@ -467,12 +467,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> delete_user_and_forms_with_http_info(site_slug, user_slug_or_id)
+> <Array(nil, Integer, Hash)> delete_user_and_forms_with_http_info(site_slug, user_slug)
 
 ```ruby
 begin
   # Delete a form user record
-  data, status_code, headers = api_instance.delete_user_and_forms_with_http_info(site_slug, user_slug_or_id)
+  data, status_code, headers = api_instance.delete_user_and_forms_with_http_info(site_slug, user_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -486,7 +486,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 
 ### Return type
 
@@ -504,7 +504,7 @@ nil (empty response body)
 
 ## get_form_group
 
-> <FormGroupDetailsResponse> get_form_group(site_slug, user_slug_or_id, group_slug)
+> <FormGroupDetailsResponse> get_form_group(site_slug, user_slug, group_slug)
 
 Get a form group
 
@@ -531,12 +531,12 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 
 begin
   # Get a form group
-  result = api_instance.get_form_group(site_slug, user_slug_or_id, group_slug)
+  result = api_instance.get_form_group(site_slug, user_slug, group_slug)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->get_form_group: #{e}"
@@ -547,12 +547,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormGroupDetailsResponse>, Integer, Hash)> get_form_group_with_http_info(site_slug, user_slug_or_id, group_slug)
+> <Array(<FormGroupDetailsResponse>, Integer, Hash)> get_form_group_with_http_info(site_slug, user_slug, group_slug)
 
 ```ruby
 begin
   # Get a form group
-  data, status_code, headers = api_instance.get_form_group_with_http_info(site_slug, user_slug_or_id, group_slug)
+  data, status_code, headers = api_instance.get_form_group_with_http_info(site_slug, user_slug, group_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormGroupDetailsResponse>
@@ -566,7 +566,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 
 ### Return type
@@ -585,7 +585,7 @@ end
 
 ## get_form_user
 
-> <FormUserDetailsResponse> get_form_user(site_slug, user_slug_or_id, opts)
+> <FormUserDetailsResponse> get_form_user(site_slug, user_slug, opts)
 
 Get patient details
 
@@ -612,14 +612,14 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 opts = {
   include_form_groups: false # Boolean | If true, the response will include the form groups of the user
 }
 
 begin
   # Get patient details
-  result = api_instance.get_form_user(site_slug, user_slug_or_id, opts)
+  result = api_instance.get_form_user(site_slug, user_slug, opts)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->get_form_user: #{e}"
@@ -630,12 +630,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormUserDetailsResponse>, Integer, Hash)> get_form_user_with_http_info(site_slug, user_slug_or_id, opts)
+> <Array(<FormUserDetailsResponse>, Integer, Hash)> get_form_user_with_http_info(site_slug, user_slug, opts)
 
 ```ruby
 begin
   # Get patient details
-  data, status_code, headers = api_instance.get_form_user_with_http_info(site_slug, user_slug_or_id, opts)
+  data, status_code, headers = api_instance.get_form_user_with_http_info(site_slug, user_slug, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormUserDetailsResponse>
@@ -649,7 +649,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **include_form_groups** | **Boolean** | If true, the response will include the form groups of the user | [optional] |
 
 ### Return type
@@ -668,7 +668,7 @@ end
 
 ## get_group_form_details
 
-> <FormDetailsResponse> get_group_form_details(site_slug, user_slug_or_id, group_slug, form_slug)
+> <FormDetailsResponse> get_group_form_details(site_slug, user_slug, group_slug, form_slug)
 
 Get form details
 
@@ -695,13 +695,13 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 form_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form
 
 begin
   # Get form details
-  result = api_instance.get_group_form_details(site_slug, user_slug_or_id, group_slug, form_slug)
+  result = api_instance.get_group_form_details(site_slug, user_slug, group_slug, form_slug)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->get_group_form_details: #{e}"
@@ -712,12 +712,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormDetailsResponse>, Integer, Hash)> get_group_form_details_with_http_info(site_slug, user_slug_or_id, group_slug, form_slug)
+> <Array(<FormDetailsResponse>, Integer, Hash)> get_group_form_details_with_http_info(site_slug, user_slug, group_slug, form_slug)
 
 ```ruby
 begin
   # Get form details
-  data, status_code, headers = api_instance.get_group_form_details_with_http_info(site_slug, user_slug_or_id, group_slug, form_slug)
+  data, status_code, headers = api_instance.get_group_form_details_with_http_info(site_slug, user_slug, group_slug, form_slug)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormDetailsResponse>
@@ -731,7 +731,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 | **form_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form |  |
 
@@ -751,7 +751,7 @@ end
 
 ## get_user_form_details
 
-> <FormDetailsResponse> get_user_form_details(site_slug, user_slug_or_id, form_type_or_id)
+> <FormDetailsResponse> get_user_form_details(site_slug, user_slug, form_type_or_id)
 
 Get form details
 
@@ -778,12 +778,12 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 form_type_or_id = '_8n6EzC' # String | The type of form to retrieve, or the form's unique identifier (TypeId) assigned by the client/PMS
 
 begin
   # Get form details
-  result = api_instance.get_user_form_details(site_slug, user_slug_or_id, form_type_or_id)
+  result = api_instance.get_user_form_details(site_slug, user_slug, form_type_or_id)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->get_user_form_details: #{e}"
@@ -794,12 +794,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormDetailsResponse>, Integer, Hash)> get_user_form_details_with_http_info(site_slug, user_slug_or_id, form_type_or_id)
+> <Array(<FormDetailsResponse>, Integer, Hash)> get_user_form_details_with_http_info(site_slug, user_slug, form_type_or_id)
 
 ```ruby
 begin
   # Get form details
-  data, status_code, headers = api_instance.get_user_form_details_with_http_info(site_slug, user_slug_or_id, form_type_or_id)
+  data, status_code, headers = api_instance.get_user_form_details_with_http_info(site_slug, user_slug, form_type_or_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormDetailsResponse>
@@ -813,7 +813,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **form_type_or_id** | **String** | The type of form to retrieve, or the form&#39;s unique identifier (TypeId) assigned by the client/PMS |  |
 
 ### Return type
@@ -832,7 +832,7 @@ end
 
 ## list_form_groups_for_user
 
-> <FormGroupDetailsListResponse> list_form_groups_for_user(site_slug, user_slug_or_id, opts)
+> <FormGroupDetailsListResponse> list_form_groups_for_user(site_slug, user_slug, opts)
 
 List form groups for a user
 
@@ -859,7 +859,7 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 opts = {
   page_size: 50, # Integer | The number of items to retrieve in this request
   next_page_token: 'next_page_token_example' # String | A token retrieved from a previous request, used to retrieve the next page of results
@@ -867,7 +867,7 @@ opts = {
 
 begin
   # List form groups for a user
-  result = api_instance.list_form_groups_for_user(site_slug, user_slug_or_id, opts)
+  result = api_instance.list_form_groups_for_user(site_slug, user_slug, opts)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->list_form_groups_for_user: #{e}"
@@ -878,12 +878,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormGroupDetailsListResponse>, Integer, Hash)> list_form_groups_for_user_with_http_info(site_slug, user_slug_or_id, opts)
+> <Array(<FormGroupDetailsListResponse>, Integer, Hash)> list_form_groups_for_user_with_http_info(site_slug, user_slug, opts)
 
 ```ruby
 begin
   # List form groups for a user
-  data, status_code, headers = api_instance.list_form_groups_for_user_with_http_info(site_slug, user_slug_or_id, opts)
+  data, status_code, headers = api_instance.list_form_groups_for_user_with_http_info(site_slug, user_slug, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormGroupDetailsListResponse>
@@ -897,7 +897,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **page_size** | **Integer** | The number of items to retrieve in this request | [optional] |
 | **next_page_token** | **String** | A token retrieved from a previous request, used to retrieve the next page of results | [optional] |
 
@@ -1002,7 +1002,7 @@ end
 
 ## list_forms_in_group
 
-> <FormDetailsListResponse> list_forms_in_group(site_slug, user_slug_or_id, group_slug, opts)
+> <FormDetailsListResponse> list_forms_in_group(site_slug, user_slug, group_slug, opts)
 
 List forms for a form group
 
@@ -1029,7 +1029,7 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
 group_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group
 opts = {
   include_user_responses: false # Boolean | If true, the response will include the responses of the user
@@ -1037,7 +1037,7 @@ opts = {
 
 begin
   # List forms for a form group
-  result = api_instance.list_forms_in_group(site_slug, user_slug_or_id, group_slug, opts)
+  result = api_instance.list_forms_in_group(site_slug, user_slug, group_slug, opts)
   p result
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->list_forms_in_group: #{e}"
@@ -1048,12 +1048,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FormDetailsListResponse>, Integer, Hash)> list_forms_in_group_with_http_info(site_slug, user_slug_or_id, group_slug, opts)
+> <Array(<FormDetailsListResponse>, Integer, Hash)> list_forms_in_group_with_http_info(site_slug, user_slug, group_slug, opts)
 
 ```ruby
 begin
   # List forms for a form group
-  data, status_code, headers = api_instance.list_forms_in_group_with_http_info(site_slug, user_slug_or_id, group_slug, opts)
+  data, status_code, headers = api_instance.list_forms_in_group_with_http_info(site_slug, user_slug, group_slug, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FormDetailsListResponse>
@@ -1067,7 +1067,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **group_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a form group |  |
 | **include_user_responses** | **Boolean** | If true, the response will include the responses of the user | [optional] |
 
@@ -1087,7 +1087,7 @@ end
 
 ## update_form_user
 
-> update_form_user(site_slug, user_slug_or_id, update_form_user_request)
+> update_form_user(site_slug, user_slug, update_form_user_request)
 
 Update a form user
 
@@ -1114,12 +1114,12 @@ end
 
 api_instance = SlipstreamClient::FormsApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-user_slug_or_id = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user's unique identifier assigned by the client/PMS
-update_form_user_request = SlipstreamClient::UpdateFormUserRequest.new({display_name: 'John', last_name: 'Smith'}) # UpdateFormUserRequest | 
+user_slug = '_8n6EzC' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user
+update_form_user_request = SlipstreamClient::UpdateFormUserRequest.new({display_name: 'John Smith', last_name: 'Smith'}) # UpdateFormUserRequest | 
 
 begin
   # Update a form user
-  api_instance.update_form_user(site_slug, user_slug_or_id, update_form_user_request)
+  api_instance.update_form_user(site_slug, user_slug, update_form_user_request)
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling FormsApi->update_form_user: #{e}"
 end
@@ -1129,12 +1129,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> update_form_user_with_http_info(site_slug, user_slug_or_id, update_form_user_request)
+> <Array(nil, Integer, Hash)> update_form_user_with_http_info(site_slug, user_slug, update_form_user_request)
 
 ```ruby
 begin
   # Update a form user
-  data, status_code, headers = api_instance.update_form_user_with_http_info(site_slug, user_slug_or_id, update_form_user_request)
+  data, status_code, headers = api_instance.update_form_user_with_http_info(site_slug, user_slug, update_form_user_request)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -1148,7 +1148,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **site_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice |  |
-| **user_slug_or_id** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user or the user&#39;s unique identifier assigned by the client/PMS |  |
+| **user_slug** | **String** | The Slipstream [slug](https://sqids.org/) that uniquely identifies a user |  |
 | **update_form_user_request** | [**UpdateFormUserRequest**](UpdateFormUserRequest.md) |  |  |
 
 ### Return type
