@@ -13,12 +13,17 @@
 | **address** | [**StreetAddress**](StreetAddress.md) |  | [optional] |
 | **postal_address** | [**StreetAddress**](StreetAddress.md) |  | [optional] |
 | **coordinates** | [**Coordinates**](Coordinates.md) |  | [optional] |
-| **phone_number** | **String** | Contact phone number for in [E.164 format](https://en.wikipedia.org/wiki/E.164) | [optional] |
-| **email_address** | **String** |  | [optional] |
+| **phone_number** | **String** | Contact phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) | [optional] |
+| **email_address** | **String** | An email address | [optional] |
 | **application_version** | **String** | The version of the software that the practice is running | [optional] |
 | **currency** | **String** | The [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes) currency code used by the practice. | [optional] |
 | **google_place_id** | **String** | The place id of the practice, if known. See [Google Places API](https://developers.google.com/places/web-service/place-id) for more information. | [optional] |
 | **site_status** | [**PracticeStatus**](PracticeStatus.md) |  | [optional] |
+| **logo_url** | **String** | A URL to the logo for the practice. | [optional] |
+| **website_url** | **String** | A URL to the website for the practice. | [optional] |
+| **privacy_policy_url** | **String** | A URL to the privacy policy for the practice. | [optional] |
+| **time_zone** | **String** | The time zone of the practice, in [IANA Time Zone Database](https://www.iana.org/time-zones) format. | [optional] |
+| **google_tags** | [**GoogleTags**](GoogleTags.md) |  | [optional] |
 
 ## Example
 
@@ -40,7 +45,12 @@ instance = SlipstreamClient::PracticeSiteDetails.new(
   application_version: 1.2.3,
   currency: USD,
   google_place_id: ChIJN1t_tDeuEmsRUsoyG83frY4,
-  site_status: null
+  site_status: null,
+  logo_url: https://dental-mega-corp.com/logo.svg,
+  website_url: https://dental-mega-corp.com/locations/san-francisco,
+  privacy_policy_url: https://dental-mega-corp.com/privacy-policy,
+  time_zone: Europe/London,
+  google_tags: null
 )
 ```
 
