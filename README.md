@@ -92,7 +92,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.dev/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
