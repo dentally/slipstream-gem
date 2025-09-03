@@ -1,6 +1,6 @@
 # SlipstreamClient::PhysicalPostWebhooksApi
 
-All URIs are relative to *https://slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.uk.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -92,7 +92,7 @@ end
 
 Subscribe
 
-Subscribe to receiving webhooks for physical post events
+Subscribe to receive webhooks for physical post events
 
 ### Examples
 

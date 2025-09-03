@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_id** | **String** | The ID of the payment provider account | [optional] |
+| **id** | **String** | The unique identifier for the payment account | [optional] |
 
 ## Example
 
@@ -12,7 +12,7 @@
 require 'slipstream_client'
 
 instance = SlipstreamClient::PaymentAccountDeleted.new(
-  account_id: 123e4567-e89b-12d3-a456-426614174000
+  id: 123e4567-e89b-12d3-a456-426614174000
 )
 ```
 

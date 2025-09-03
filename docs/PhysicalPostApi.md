@@ -1,6 +1,6 @@
 # SlipstreamClient::PhysicalPostApi
 
-All URIs are relative to *https://slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.uk.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -11,7 +11,7 @@ All URIs are relative to *https://slipstream.hsone.app/api/v1*
 
 ## create_letters
 
-> <CreateLetters202Response> create_letters(site_slug, send_letter_request)
+> <PhysicalPostSent> create_letters(site_slug, send_letter_request)
 
 Send letters
 
@@ -38,7 +38,7 @@ end
 
 api_instance = SlipstreamClient::PhysicalPostApi.new
 site_slug = 'site_slug_example' # String | The Slipstream [slug](https://sqids.org/) that uniquely identifies a physical practice
-send_letter_request = [SlipstreamClient::SendLetterRequest.new({pms_specific_id: '{064a5f0e-0b0e-4e1e-8e1e-0e0e0e0e0e0e}', addressee: SlipstreamClient::Addressee.new({pms_specific_id: '1234567890abcdef1234567890abcdef', full_name: 'Dr John Smith III'}), address: SlipstreamClient::StreetAddress.new({address_line1: '123 Main St', country: 'USA'}), pdf: SlipstreamClient::DataUri.new({id: '12345678-1234-1234-1234-1234567890ab', data_uri: 'https://staticinternalfilessa.blob.core.windows.net/images/Slipstream_tree.pdf?sp=r&st=2024-01-31T22:40:26Z&se=2026-01-02T06:40:26Z&spr=https&sv=2022-11-02&sr=b&sig=lbt2HQSdD%2BFG6x5hJK%2Brk2yZhMcZLqhiUm0tsu8xZ7E%3D'})})] # Array<SendLetterRequest> | The details of the letter to send
+send_letter_request = [SlipstreamClient::SendLetterRequest.new({pms_specific_id: '{064a5f0e-0b0e-4e1e-8e1e-0e0e0e0e0e0e}', addressee: SlipstreamClient::Addressee.new({pms_specific_id: '1234567890abcdef1234567890abcdef', full_name: 'Dr John Smith III'}), address: SlipstreamClient::StreetAddress.new({country: 'USA'}), pdf: SlipstreamClient::DataUri.new})] # Array<SendLetterRequest> | The details of the letter to send
 
 begin
   # Send letters
@@ -53,7 +53,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateLetters202Response>, Integer, Hash)> create_letters_with_http_info(site_slug, send_letter_request)
+> <Array(<PhysicalPostSent>, Integer, Hash)> create_letters_with_http_info(site_slug, send_letter_request)
 
 ```ruby
 begin
@@ -61,7 +61,7 @@ begin
   data, status_code, headers = api_instance.create_letters_with_http_info(site_slug, send_letter_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateLetters202Response>
+  p data # => <PhysicalPostSent>
 rescue SlipstreamClient::ApiError => e
   puts "Error when calling PhysicalPostApi->create_letters_with_http_info: #{e}"
 end
@@ -76,7 +76,7 @@ end
 
 ### Return type
 
-[**CreateLetters202Response**](CreateLetters202Response.md)
+[**PhysicalPostSent**](PhysicalPostSent.md)
 
 ### Authorization
 

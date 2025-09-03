@@ -12,6 +12,7 @@
 | **addressee** | [**Addressee**](Addressee.md) |  |  |
 | **address** | [**StreetAddress**](StreetAddress.md) |  |  |
 | **pdf** | [**DataUri**](DataUri.md) |  |  |
+| **skip_address_validation** | **Boolean** | Whether to skip address validation of the recipient address | [optional] |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = SlipstreamClient::SendLetterRequest.new(
   scheduled_send_date: 2023-10-24T14:30:15+02:00,
   addressee: null,
   address: null,
-  pdf: null
+  pdf: null,
+  skip_address_validation: false
 )
 ```
 

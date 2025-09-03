@@ -4,7 +4,6 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payment_provider** | [**PaymentProvider**](PaymentProvider.md) |  |  |
 | **currency** | **String** | The [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes) currency code used by the practice. |  |
 | **customer_id** | **String** | A unique identifier for the customer | [optional] |
 | **reference** | **String** | The PMS reference for the payment | [optional] |
@@ -21,7 +20,6 @@
 require 'slipstream_client'
 
 instance = SlipstreamClient::CreatePaymentRequest.new(
-  payment_provider: null,
   currency: USD,
   customer_id: null,
   reference: INV-1234,

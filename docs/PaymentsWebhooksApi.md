@@ -1,6 +1,6 @@
 # SlipstreamClient::PaymentsWebhooksApi
 
-All URIs are relative to *https://slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.uk.hsone.app/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -92,7 +92,7 @@ end
 
 Subscribe
 
-Subscribe to receiving webhook events for payments
+Subscribe to receive webhook events for payments
 
 ### Examples
 
