@@ -1,6 +1,6 @@
 # SlipstreamClient::PhysicalPostWebhooksApi
 
-All URIs are relative to *https://slipstream.hsone.app/api/v1*
+All URIs are relative to *https://slipstream.hsone.dev/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -25,9 +25,9 @@ require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
-  config.api_key['api_key'] = 'YOUR API KEY'
+  config.api_key['X-API-KEY'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['api_key'] = 'Bearer'
+  # config.api_key_prefix['X-API-KEY'] = 'Bearer'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -92,7 +92,7 @@ end
 
 Subscribe
 
-Subscribe to receiving webhooks for physical post events
+Subscribe to receive webhooks for physical post events
 
 ### Examples
 
@@ -102,9 +102,9 @@ require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
-  config.api_key['api_key'] = 'YOUR API KEY'
+  config.api_key['X-API-KEY'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['api_key'] = 'Bearer'
+  # config.api_key_prefix['X-API-KEY'] = 'Bearer'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
@@ -181,9 +181,9 @@ require 'slipstream_client'
 # setup authorization
 SlipstreamClient.configure do |config|
   # Configure API key authorization: api_key
-  config.api_key['api_key'] = 'YOUR API KEY'
+  config.api_key['X-API-KEY'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['api_key'] = 'Bearer'
+  # config.api_key_prefix['X-API-KEY'] = 'Bearer'
 
   # Configure OAuth2 access token for authorization: azure_auth
   config.access_token = 'YOUR ACCESS TOKEN'
