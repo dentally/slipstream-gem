@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module SlipstreamClient
-  # The billing summary details 
+  # The billing summary details
   class BillingSummaryDetails
     # The Start Date of the billing summary period
     attr_accessor :date_from
@@ -30,7 +30,7 @@ module SlipstreamClient
       {
         :'date_from' => :'DateFrom',
         :'date_to' => :'DateTo',
-        :'items' => :'Items'
+        :'items' => :'Summary'
       }
     end
 
