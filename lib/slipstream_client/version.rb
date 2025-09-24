@@ -11,5 +11,5 @@ Generator version: 7.15.0
 =end
 
 module SlipstreamClient
-  VERSION = '1.0.9'
+  VERSION = '1.0.10'
 end
